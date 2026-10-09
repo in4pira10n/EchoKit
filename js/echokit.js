@@ -7,6 +7,8 @@ export {
 } from "../components/button/index.js?v=20261008-color-export";
 
 export * from "../components/input/index.js";
+export * from "../components/segmented/index.js";
+export * from "../components/setting-row/index.js";
 export * from "../components/modal/index.js";
 export * from "../components/tab/index.js";
 export * from "../components/library-card/index.js";

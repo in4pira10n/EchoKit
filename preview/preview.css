@@ -514,6 +514,175 @@ html[data-stage-background="off"] .echo-kit-stage::before {
 }
 .echo-kit-stage > .echo-button.echo-button--icon { width: 52px; min-width: 52px; }
 
+.echo-kit-stage--segmented {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+}
+
+.echo-kit-stage--segmented > div {
+  display: grid;
+  justify-items: center;
+}
+
+.echo-kit-demo-status {
+  margin: 0;
+  color: var(--echo-color-text-secondary);
+  font-size: 13px;
+  text-align: center;
+}
+
+.echo-kit-practice-fields {
+  display: grid;
+  gap: 20px;
+}
+
+.echo-kit-practice-field {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.echo-kit-practice-field-meta {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--echo-color-text-tertiary);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.echo-kit-practice-field-meta code {
+  overflow: hidden;
+  font-family: var(--echo-font-mono);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.echo-kit-practice-input {
+  width: 100%;
+  height: var(--echo-control-height);
+  min-height: var(--echo-control-height);
+  box-sizing: border-box;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: #333;
+  color: var(--echo-color-text);
+  font-family: var(--echo-font-mono);
+  font-size: 16px;
+  box-shadow: none;
+}
+
+.echo-kit-practice-input::placeholder {
+  color: #999;
+  opacity: .4;
+}
+
+.echo-kit-practice-input:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+select.echo-kit-practice-input {
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+textarea.echo-kit-practice-input {
+  height: auto;
+  min-height: 168px;
+  padding-block: 12px;
+  border-radius: 20px;
+  resize: vertical;
+}
+
+html[data-theme="light"] .echo-kit-practice-input {
+  background: color-mix(in srgb, var(--echo-color-text) 10%, var(--echo-color-surface));
+}
+
+.echo-kit-stage--inputs {
+  display: grid;
+  place-items: center;
+}
+
+.echo-kit-input-demo-fields {
+  width: min(100%, 520px);
+  gap: 12px;
+}
+
+.echo-kit-input-demo-note {
+  margin: 0;
+  color: var(--echo-color-text-secondary);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.echo-kit-stage--setting-row > #setting-row-demo {
+  width: min(100%, 860px);
+}
+
+html[data-theme="dark"] .echo-kit-stage--setting-row {
+  --echo-color-canvas: #1a1a1a;
+  --echo-color-surface: #333333;
+}
+
+html[data-theme="light"] .echo-kit-stage--setting-row {
+  --echo-color-canvas: #f2f2f7;
+  --echo-color-surface: #ffffff;
+}
+
+.echo-setting-row__application-grid {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+.echo-setting-row__demo-actions {
+  display: grid;
+}
+
+.echo-setting-row__demo-actions > .echo-button {
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  justify-content: center;
+}
+
+.echo-setting-row__demo-note {
+  margin: 0;
+  color: var(--echo-color-text-tertiary);
+  font-size: .78rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+html[data-stage-background="on"] .echo-kit-stage--inputs .echo-kit-practice-field-meta,
+html[data-stage-background="on"] .echo-kit-input-demo-note { color: #fff; }
+
+@media (max-width: 640px) {
+  .echo-setting-row__demo-actions > .echo-setting-row__add-action:has(.echo-button__icon-wrap) {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 52px;
+    padding: 12px 22px;
+    border-radius: var(--echo-radius-pill);
+  }
+  .echo-setting-row__demo-actions .echo-button__label {
+    display: inline;
+  }
+}
+
+@media (max-width: 760px) {
+  .echo-kit-stage--setting-row { padding-inline: 16px; }
+}
+
 .echo-kit-stage--tabs {
   overflow: visible;
 }

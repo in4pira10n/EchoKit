@@ -18,3 +18,14 @@ Each component's `README.md` is its public interface contract. Add or change a p
 The initial field-hint requirements for component detail pages are collected in [`../principles/component principles.md`](../principles/component%20principles.md). Keep those hints focused on the smallest useful configuration surface; component implementation and advanced API details stay in each component's own README.
 
 There is intentionally no second `components/` tree under `js/` or `css/`. Runtime entry points re-export the canonical files from this directory so consumers have one source of truth.
+
+## Component directories
+
+- `button/`: action buttons.
+- `input/`: text inputs and labeled fields.
+- `segmented/`: mutually exclusive segmented choices.
+- `setting-row/`: collapsible settings-panel container.
+- `tab/`: primary application navigation.
+- `modal/`: modal dialogs.
+- `library-card/`: content cards with selection state.
+- `metric/`: compact icon, label, and value units.

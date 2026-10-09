@@ -14,4 +14,4 @@ const field = createEchoField({
 form.append(field);
 ```
 
-The returned field exposes `field.echoField.input` and supports `update()`, `getOptions()`, and `destroy()`.
+The returned field exposes `field.echoField.input` and supports `update()`, `getOptions()`, and `destroy()`. Use `createEchoInput()` when a bare input element is needed. Supported types include text, search, number, email, password, tel, and url; number steppers are hidden by the shared stylesheet.

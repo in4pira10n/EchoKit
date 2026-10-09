@@ -1,8 +1,8 @@
 import { createEchoLibraryCard } from '../components/library-card/index.js';
-import { createEchoMetric } from '../components/metric/index.js';
+import { createEchoMetric } from '../components/metric/metric.js?v=20261010-card-interaction-contrast';
 // Illustrative preview values, not local-library statistics.
 export const libraryDemoOptions = {
-  icon: 'photo', title: 'EchoGallery', addition: '/home/Pictures/EchoGallery', active: true, primary: true,
+  icon: 'photo', logo: new URL('../assets/background.JPG', import.meta.url).href, title: 'EchoGallery', addition: '/home/Pictures/EchoGallery', active: true, primary: true,
   onClick: (_, card) => card.echoLibraryCard.update({ active: !card.echoLibraryCard.getOptions().active }),
   attachment: ['#2f80ff', '#68a7ff', '#9bc7ff', '#c7def8', '#dce9f6', '#f1f5fa'],
   content: [

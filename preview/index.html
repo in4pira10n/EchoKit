@@ -7,8 +7,8 @@
     <meta name="color-scheme" content="dark light">
     <link rel="icon" href="data:,">
     <title>The Echo’s Design Kit · EchoKit</title>
-    <link rel="stylesheet" href="../css/echokit.css?v=20261008-system-colors">
-    <link rel="stylesheet" href="./preview.css?v=20261009-sidebar-filled-icons">
+    <link rel="stylesheet" href="../css/echokit.css?v=20261010-card-interaction-contrast">
+    <link rel="stylesheet" href="./preview.css?v=20261010-setting-row-colors">
   </head>
   <body class="echo-root">
     <div class="echo-kit-showcase" id="top">
@@ -42,6 +42,15 @@
             </a>
             <a href="./pages/library-card/" data-category-link="library-card">
               <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle" alt="" aria-hidden="true"><span>资源库卡片</span></span>
+            </a>
+            <a href="#segmented-section" data-category-link="segmented">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="slider.horizontal.3" alt="" aria-hidden="true"><span>分段选择器</span></span>
+            </a>
+            <a href="#input-section" data-category-link="input">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle.and.pencil.and.ellipsis" alt="" aria-hidden="true"><span>输入框</span></span>
+            </a>
+            <a href="#setting-row-section" data-category-link="setting-row">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="gearshape.2" alt="" aria-hidden="true"><span>设置行</span></span>
             </a>
           </nav>
           <p class="echo-visually-hidden" id="filter-status" aria-live="polite"></p>
@@ -126,6 +135,33 @@
             <p class="echo-kit-component-copy">展示头像、名称、路径、主题配色和统计信息，并标示当前资源库与可用状态。</p>
             <div class="echo-kit-stage" data-library-demo aria-label="资源库卡片展示区"></div>
           </section>
+
+          <section class="echo-kit-component" id="segmented-section" data-component="segmented" aria-labelledby="segmented-title">
+            <h2 class="echo-kit-component-title" id="segmented-title">
+              <a class="echo-kit-component-title-link" href="#segmented-section"><span>分段选择器</span><span lang="en">Segmented Control</span></a>
+            </h2>
+            <p class="echo-kit-component-copy">分段选择器用于在同一组互斥选项之间快速切换，例如系统、浅色与深色外观。</p>
+            <div class="echo-kit-stage echo-kit-stage--segmented" aria-label="分段选择器展示区">
+              <div id="segmented-demo"></div>
+              <p class="echo-kit-demo-status" id="segmented-demo-status" aria-live="polite">当前选择：系统</p>
+            </div>
+          </section>
+
+          <section class="echo-kit-component" id="input-section" data-component="input" aria-labelledby="input-title">
+            <h2 class="echo-kit-component-title" id="input-title">
+              <a class="echo-kit-component-title-link" href="#input-section"><span>输入框</span><span lang="en">Input</span></a>
+            </h2>
+            <p class="echo-kit-component-copy">输入框用于收集或编辑用户提供的信息；标签、提示和校验状态与输入控件组合呈现。</p>
+            <div class="echo-kit-stage echo-kit-stage--inputs" id="input-demo" aria-label="输入框展示区"></div>
+          </section>
+
+          <section class="echo-kit-component" id="setting-row-section" data-component="setting-row" aria-labelledby="setting-row-title">
+            <h2 class="echo-kit-component-title" id="setting-row-title">
+              <a class="echo-kit-component-title-link" href="#setting-row-section"><span>设置行</span><span lang="en">Setting Row</span></a>
+            </h2>
+            <p class="echo-kit-component-copy">设置行将一组相关偏好收纳在可展开的面板中；折叠容器可承载输入框、选择器及其他控件。</p>
+            <div class="echo-kit-stage echo-kit-stage--setting-row" id="setting-row-demo" aria-label="设置行展示区"></div>
+          </section>
         </div>
       </main>
     </div>
@@ -137,6 +173,6 @@
       <img class="echo-kit-theme-fab-icon" id="background-mode-glyph" data-echo-icon="photo.fill" alt="" aria-hidden="true">
     </button>
     <script type="module" src="./router.js?v=20261009-sidebar-link-cache"></script>
-    <script type="module" src="./preview.js?v=20261009-sidebar-filled-icons"></script>
+    <script type="module" src="./preview.js?v=20261010-card-interaction-contrast"></script>
   </body>
 </html>

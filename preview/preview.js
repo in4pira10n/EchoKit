@@ -1,9 +1,10 @@
 import { upgradeEchoButton } from "../js/echokit.js";
 import { upgradeEchoTabs } from "../components/tab/index.js";
 import { installEchoIcons, resolveEchoIcon } from "../components/icon.js";
-import { mountLibraryDemo } from './library-card-demo.js';
+import { mountLibraryDemo } from './library-card-demo.js?v=20261010-card-interaction-contrast';
 import { mountModalDemo } from './modal-demo.js';
 import { getTabPresetOptions } from "./tab-presets.js";
+import { mountPrimitiveDemos } from "./component-demos.js?v=20261010-card-interaction-contrast";
 
 const assetUrl = (name) => resolveEchoIcon(name);
 
@@ -11,6 +12,7 @@ export function initPreview(root = document) {
 installEchoIcons(root);
 mountLibraryDemo(root);
 mountModalDemo(root);
+mountPrimitiveDemos(root);
 const themeToggle = root.querySelector("#theme-toggle");
 const themeGlyph = root.querySelector("#theme-glyph");
 const backgroundModeToggle = root.querySelector("#background-mode-toggle");

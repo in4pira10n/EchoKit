@@ -1,5 +1,13 @@
 import { resolveEchoIcon } from "../icon.js";
 
+function isSymbolName(icon) {
+  if (typeof icon === "string") {
+    const value = icon.trim();
+    return Boolean(value) && !/^(?:[a-z][a-z\d+.-]*:|\/|\.\.?\/|#)/i.test(value) && !value.includes("/");
+  }
+  return Boolean(icon && typeof icon === "object" && (typeof icon.sfSymbol === "string" || typeof icon.name === "string"));
+}
+
 export function createEchoMetric(options = {}) {
   const element = document.createElement("div");
   const render = (value) => {
@@ -11,6 +19,7 @@ export function createEchoMetric(options = {}) {
       icon.src = resolveEchoIcon(value.icon) || "";
       icon.alt = "";
       icon.setAttribute("aria-hidden", "true");
+      if (isSymbolName(value.icon)) icon.dataset.echoSymbol = "true";
       element.append(icon);
     }
     const content = document.createElement("span");

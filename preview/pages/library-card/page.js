@@ -1,5 +1,5 @@
 import { createEchoLibraryCard } from '../../../components/library-card/index.js';
-import { createEchoMetric } from '../../../components/metric/index.js';
+import { createEchoMetric } from '../../../components/metric/metric.js?v=20261010-card-interaction-contrast';
 import { installDetailNavInteractions } from '../detail-nav.js';
 
 installDetailNavInteractions();
@@ -15,6 +15,7 @@ const defaultContent = [
 
 const card = createEchoLibraryCard({
   icon: 'square.grid.2x2',
+  logo: new URL('../../../assets/background.JPG', import.meta.url).href,
   title: 'EchoKit 设计卡片',
   addition: '一张可以承载多种内容的卡片',
   accent: '#2f80ff',

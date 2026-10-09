@@ -1,4 +1,4 @@
-@import '../detail.css';
+@import url('../detail.css?v=20261010-shared-practice-fields');
 
 #library-card-practice-content {
   border-radius: 12px;

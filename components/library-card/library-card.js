@@ -99,20 +99,23 @@ export function createEchoLibraryCard(initial = {}) {
     if (!options.available || options.rebuildRequired) title.append(node('span', 'echo-library-card__badge', !options.available ? '不可用' : '需要重建'));
     const path = node('div', 'echo-library-card__path', options.addition || '尚未设置说明');
     path.title = options.addition;
-    const swatches = node('div', 'echo-library-card__swatches');
-    swatches.setAttribute('aria-hidden', 'true');
     const attachments = options.attachment;
-    attachments.forEach((attachment, index) => {
-      const dot = node('span', '');
-      const mix = typeof attachment === 'number' ? attachment : Number(attachment?.mix ?? 100 - index * 16);
-      dot.style.setProperty('--swatch-mix', `${Math.max(0, Math.min(100, mix))}%`);
-      if (attachment instanceof Node) swatches.append(attachment);
-      else {
-        if (typeof attachment === 'string' && /^#[\da-f]{3}(?:[\da-f]{3})?$/i.test(attachment)) dot.style.setProperty('--swatch-color', attachment);
-        swatches.append(dot);
-      }
-    });
-    fields.append(title, path, swatches);
+    fields.append(title, path);
+    if (attachments.length) {
+      const swatches = node('div', 'echo-library-card__swatches');
+      swatches.setAttribute('aria-hidden', 'true');
+      attachments.forEach((attachment, index) => {
+        const dot = node('span', '');
+        const mix = typeof attachment === 'number' ? attachment : Number(attachment?.mix ?? 100 - index * 16);
+        dot.style.setProperty('--swatch-mix', `${Math.max(0, Math.min(100, mix))}%`);
+        if (attachment instanceof Node) swatches.append(attachment);
+        else {
+          if (typeof attachment === 'string' && /^#[\da-f]{3}(?:[\da-f]{3})?$/i.test(attachment)) dot.style.setProperty('--swatch-color', attachment);
+          swatches.append(dot);
+        }
+      });
+      fields.append(swatches);
+    }
     main.append(logo, fields);
     const metrics = node('div', 'echo-library-card__metrics');
     options.content.forEach(entry => {

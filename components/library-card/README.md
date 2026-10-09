@@ -47,12 +47,12 @@ const card = createEchoLibraryCard({
 container.append(card);
 ```
 
-Load `@echo/kit/css` once. The card keeps a light surface and readable dark foreground in both preview themes; accent and state styling are owned by the component. System fonts only; stacked layout below 900px. Preview values are illustrative, not local-library statistics.
+Load `@echo/kit/css` once. The card uses a neutral surface with accent-tinted hover, selected, and pressed states in both appearances; the circular avatar has no border. Metrics keep full contrast with secondary-label captions and primary-label values. System fonts only; stacked layout below 900px. Preview values are illustrative, not local-library statistics.
 
 ## States And Composition
 
 `active` is controlled by the host, exposed as `aria-pressed` on interactive cards. Provide `onClick` for pointer and Enter/Space activation; unavailable cards expose `aria-disabled` and suppress activation. A demo may toggle active, but real library switching remains an application operation.
 
-Hover raises an interactive card by 1px; press gives a slight scale feedback. Reduced Motion removes transitions. Metric content has 40% opacity normally, overridden to full opacity for Increase Contrast. This dimming is a visual preference, not a contrast guarantee for essential statistics.
+Hover raises and tints an interactive card; the controlled `active` state uses a stronger accent tint, and pointer press adds a distinct tint with a slight scale feedback. Keyboard focus uses the accent as a focus indicator. Reduced Motion removes transitions. Metrics remain fully legible in both light and dark appearances; SF Symbol glyphs adapt to the dark appearance while custom image icons retain their original colors.
 
 Use factories (`() => createEchoMetric(...)`) to compose reusable card content, so each card owns separate DOM nodes. Attachment accepts HEX swatches or nodes; an empty array deliberately hides swatches. `getOptions()` copies content and attachment arrays. SF avatar symbols use a fixed width and natural height; image avatars retain circular cropping.

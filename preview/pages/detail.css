@@ -336,74 +336,6 @@ html[data-theme="dark"] .echo-kit-breadcrumb-chevron {
   border-radius: 50%;
 }
 
-.echo-kit-practice-fields {
-  display: grid;
-  gap: 20px;
-}
-
-.echo-kit-practice-field {
-  display: grid;
-  gap: 12px;
-  min-width: 0;
-}
-
-.echo-kit-practice-field-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  min-width: 0;
-  color: var(--echo-color-text-tertiary);
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.echo-kit-practice-field-meta code {
-  overflow: hidden;
-  font-family: var(--echo-font-mono);
-  font-size: 12px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.echo-kit-practice-input {
-  width: 100%;
-  height: var(--echo-control-height);
-  min-height: var(--echo-control-height);
-  box-sizing: border-box;
-  padding: 0 16px;
-  border: 0;
-  border-radius: 999px;
-  background: #333;
-  color: var(--echo-color-text);
-  font-family: var(--echo-font-mono);
-  font-size: 16px;
-  box-shadow: none;
-}
-
-.echo-kit-practice-input::placeholder {
-  color: #999;
-  opacity: .4;
-}
-
-.echo-kit-practice-input:focus {
-  border-color: transparent;
-  box-shadow: none;
-}
-
-select.echo-kit-practice-input {
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-textarea.echo-kit-practice-input {
-  height: auto;
-  min-height: 168px;
-  padding-block: 12px;
-  border-radius: 20px;
-  resize: vertical;
-}
-
 .echo-kit-practice-stage {
   width: 100%;
   min-width: 0;
@@ -419,10 +351,6 @@ textarea.echo-kit-practice-input {
 .echo-kit-practice-stage > .echo-button:not(.echo-button--icon) {
   width: 100%;
   min-width: 0;
-}
-
-html[data-theme="light"] .echo-kit-practice-input {
-  background: color-mix(in srgb, var(--echo-color-text) 10%, var(--echo-color-surface));
 }
 
 @media (max-width: 760px) {

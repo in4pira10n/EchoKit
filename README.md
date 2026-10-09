@@ -22,6 +22,8 @@ Design kit of The Echos™ apps.
 | `js/echokit.js` | Framework-free JavaScript entry point for the shared component APIs |
 | `components/button/` | Canonical Button factory, CSS, type declarations, and usage notes |
 | `components/input/` | Labeled Input and Field factory, CSS, types, and usage notes |
+| `components/segmented/` | Accessible mutually exclusive selection control, CSS, types, and usage notes |
+| `components/setting-row/` | Collapsible settings-panel container, CSS, types, and usage notes |
 | `components/tab/` | EchoGallery-style icon navigation factory, CSS, types, and usage notes |
 | `components/modal/` | Modal overlay factory, focus handling, Button actions, and usage notes |
 | `js/dialog.js` | Optional delegated open, close, Escape, and focus handling for modal overlays |
@@ -36,7 +38,7 @@ From this directory, run:
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173/preview/`. The preview has a light/dark switch, responsive layouts, the seven-view EchoGallery main navigation (which collapses to a picker on narrow screens), and an accessible overlay modal with focus trapping and restoration. Component detail pages live at `/preview/pages/button/`, `/preview/pages/tab/`, and `/preview/pages/modal/`. On each detail page, the expanded component title returns to the home page and collapses its secondary navigation; the other component titles remain available for navigation.
+Then open `http://localhost:4173/preview/`. The preview has a light/dark switch, responsive layouts, the seven-view EchoGallery main navigation (which collapses to a picker on narrow screens), and an accessible overlay modal with focus trapping and restoration. The home page also demonstrates Segmented Control, Input, and Setting Row. Component detail pages live at `/preview/pages/button/`, `/preview/pages/tab/`, and `/preview/pages/modal/`. On each detail page, the expanded component title returns to the home page and collapses its secondary navigation; the other component titles remain available for navigation.
 
 ## Add EchoKit to a web app
 
@@ -88,6 +90,8 @@ Set `data-theme="dark"` for the dark token mode. If no theme is specified, the t
 - Fields: `.echo-field`, `.echo-field__label`, `.echo-input`, `.echo-field__hint`, `.echo-field--error`.
 - Surfaces: `.echo-card`, `.echo-card--padded`, `.echo-card--interactive`.
 - Segmented controls: `.echo-segmented` with `.echo-segmented__option` buttons and `aria-pressed` state.
+- Segmented Control API: see [`components/segmented/README.md`](components/segmented/README.md) for item configuration, selection updates, keyboard navigation, and change events.
+- Setting Row API: see [`components/setting-row/README.md`](components/setting-row/README.md) for collapsible settings panels and content composition.
 - Main navigation: `.echo-main-nav` with icon-only `.echo-main-nav__item` buttons; mark the active item with `aria-current="page"`.
 - Modals: `.echo-modal-overlay` contains a `.echo-modal[role="dialog"][aria-modal="true"]` panel. Add `data-echo-modal-open="modal-id"` to an opener and `data-echo-modal-close` to close controls, then call `installModalInteractions()` for overlay, Escape, focus trapping, and focus restoration. The initial `installDialogTriggers()` export and `data-echo-dialog-open` attribute remain supported as aliases.
 - Tabs API: see [`components/tab/README.md`](components/tab/README.md) for `createEchoTabs()`, `upgradeEchoTabs()`, and the compact mobile picker contract.

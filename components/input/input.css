@@ -51,6 +51,19 @@ textarea.echo-input {
   cursor: not-allowed;
 }
 
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+  margin: 0;
+  -webkit-appearance: none;
+}
+
 .echo-field__hint {
   color: var(--echo-color-text-tertiary);
   font-size: .78rem;

@@ -17,6 +17,14 @@
       "types": "./components/input/index.d.ts",
       "import": "./components/input/index.js"
     },
+    "./segmented": {
+      "types": "./components/segmented/index.d.ts",
+      "import": "./components/segmented/index.js"
+    },
+    "./setting-row": {
+      "types": "./components/setting-row/index.d.ts",
+      "import": "./components/setting-row/index.js"
+    },
     "./modal": {
       "types": "./components/modal/index.d.ts",
       "import": "./components/modal/index.js"
