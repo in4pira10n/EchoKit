@@ -1,0 +1,42 @@
+/* Opt-in base styles; EchoKit does not reset the consuming app globally. */
+.echo-root,
+.echo-root *,
+.echo-root *::before,
+.echo-root *::after {
+  box-sizing: border-box;
+}
+
+.echo-root {
+  color: var(--echo-color-text);
+  font-family: var(--echo-font-family);
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.echo-root :where(button, input, select, textarea) {
+  color: inherit;
+  font: inherit;
+}
+
+.echo-root button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.echo-root :where(button, input, select, textarea, a, [tabindex]):focus-visible {
+  outline: 3px solid var(--echo-color-focus);
+  outline-offset: 2px;
+}
+
+.echo-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

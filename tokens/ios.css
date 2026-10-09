@@ -1,0 +1,85 @@
+/* Web equivalents of iOS color roles, not native dynamic UIColor values. */
+:root {
+  --echo-color-gray2: #aeaeb2;
+  --echo-color-gray3: #c7c7cc;
+  --echo-color-gray4: #d1d1d6;
+  --echo-color-gray5: #e5e5ea;
+  --echo-color-gray6: #f2f2f7;
+  --echo-color-system-background: #fff;
+  --echo-color-secondary-system-background: #f2f2f7;
+  --echo-color-tertiary-system-background: #fff;
+  --echo-color-system-grouped-background: #f2f2f7;
+  --echo-color-secondary-system-grouped-background: #fff;
+  --echo-color-tertiary-system-grouped-background: #f2f2f7;
+  --echo-color-label: #000;
+  --echo-color-secondary-label: #3c3c4399;
+  --echo-color-tertiary-label: #3c3c434d;
+  --echo-color-quaternary-label: #3c3c432e;
+  --echo-color-placeholder-text: var(--echo-color-tertiary-label);
+  --echo-color-separator: #3c3c434a;
+  --echo-color-opaque-separator: #c6c6c8;
+  --echo-color-link: var(--echo-color-blue);
+  --echo-color-fill: #78788033;
+  --echo-color-secondary-fill: #78788029;
+  --echo-color-tertiary-fill: #7676801f;
+  --echo-color-quaternary-fill: #74748014;
+  --echo-material-ultra-thin: #ffffff40;
+  --echo-material-thin: #ffffff66;
+  --echo-material-regular: #ffffffb3;
+  --echo-material-thick: #ffffffe6;
+  --echo-color-canvas: var(--echo-color-system-grouped-background);
+  --echo-color-surface: var(--echo-color-secondary-system-grouped-background);
+  --echo-color-surface-raised: var(--echo-color-tertiary-system-background);
+  --echo-color-surface-muted: var(--echo-color-tertiary-system-grouped-background);
+  --echo-color-text: var(--echo-color-label);
+  --echo-color-text-secondary: var(--echo-color-secondary-label);
+  --echo-color-text-tertiary: var(--echo-color-tertiary-label);
+  --echo-color-border: var(--echo-color-separator);
+  --echo-color-border-strong: var(--echo-color-opaque-separator);
+  --echo-color-modal-surface: var(--echo-color-secondary-system-grouped-background);
+  --echo-color-modal-text: var(--echo-color-label);
+  --echo-color-modal-field-surface: var(--echo-color-tertiary-system-grouped-background);
+  --echo-color-modal-field-border: var(--echo-color-separator);
+}
+
+[data-theme="dark"] {
+  --echo-color-gray2: #636366;
+  --echo-color-gray3: #48484a;
+  --echo-color-gray4: #3a3a3c;
+  --echo-color-gray5: #2c2c2e;
+  --echo-color-gray6: #1c1c1e;
+  --echo-color-system-background: #000;
+  --echo-color-secondary-system-background: #1c1c1e;
+  --echo-color-tertiary-system-background: #2c2c2e;
+  --echo-color-system-grouped-background: #000;
+  --echo-color-secondary-system-grouped-background: #1c1c1e;
+  --echo-color-tertiary-system-grouped-background: #2c2c2e;
+  --echo-color-label: #fff;
+  --echo-color-secondary-label: #ebebf599;
+  --echo-color-tertiary-label: #ebebf54d;
+  --echo-color-quaternary-label: #ebebf52e;
+  --echo-color-separator: #54545899;
+  --echo-color-opaque-separator: #38383a;
+  --echo-color-fill: #7878805c;
+  --echo-color-secondary-fill: #78788052;
+  --echo-color-tertiary-fill: #7676803d;
+  --echo-color-quaternary-fill: #7676802e;
+  --echo-material-ultra-thin: #1c1c1e40;
+  --echo-material-thin: #1c1c1e66;
+  --echo-material-regular: #1c1c1eb3;
+  --echo-material-thick: #1c1c1ee6;
+}
+
+@media (prefers-contrast: more) {
+  :root { --echo-color-secondary-label: #444; --echo-color-tertiary-label: #595959; --echo-color-quaternary-label: #666; --echo-color-separator: #555; }
+  [data-theme="dark"] { --echo-color-secondary-label: #eee; --echo-color-tertiary-label: #ddd; --echo-color-quaternary-label: #ccc; --echo-color-separator: #bbb; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --echo-material-ultra-thin: var(--echo-color-secondary-system-background);
+    --echo-material-thin: var(--echo-color-secondary-system-background);
+    --echo-material-regular: var(--echo-color-secondary-system-background);
+    --echo-material-thick: var(--echo-color-secondary-system-background);
+  }
+}

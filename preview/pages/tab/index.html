@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="echo-kit-detail-page" lang="zh-CN" data-theme="dark" data-stage-background="on">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" href="data:,">
+    <title>Tabs · The Echo’s Design Kit</title>
+    <link rel="stylesheet" href="../../../css/echokit.css?v=20261008-system-colors">
+    <link rel="stylesheet" href="../../preview.css?v=20261009-sidebar-filled-icons">
+    <link rel="stylesheet" href="./page.css">
+  </head>
+  <body class="echo-root">
+    <div class="echo-kit-showcase echo-kit-detail" id="top">
+      <header class="echo-kit-topbar">
+        <div class="echo-kit-breadcrumbs" aria-label="当前位置">
+          <a class="echo-kit-brand" href="../../index.html">The Echo’s Design Kit</a>
+          <img class="echo-kit-breadcrumb-chevron" data-echo-icon="chevron.left" alt="" aria-hidden="true">
+          <span class="echo-kit-breadcrumb-current">Tabs</span>
+        </div>
+        <nav class="echo-kit-topnav" aria-label="顶部导航，暂未开放">
+          <span aria-disabled="true">Overview</span>
+          <span aria-disabled="true">What’s new</span>
+          <span aria-disabled="true">Resources</span>
+          <button class="echo-kit-search" type="button" aria-label="搜索暂未开放" disabled>
+            <img class="echo-kit-search-icon" data-echo-icon="magnifyingglass" alt="" aria-hidden="true">
+          </button>
+        </nav>
+      </header>
+
+      <main class="echo-kit-layout">
+        <aside class="echo-kit-sidebar" aria-label="主导航文档目录">
+          <label class="echo-kit-filter">
+            <img class="echo-kit-filter-icon" data-echo-icon="magnifyingglass" alt="" aria-hidden="true">
+            <input id="tab-section-filter" type="search" placeholder="Filter" autocomplete="off" aria-label="筛选主导航文档">
+          </label>
+          <nav class="echo-kit-detail-nav" aria-label="主导航文档章节">
+            <a class="echo-kit-detail-nav-muted" href="../button/">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="button.programmable" alt="" aria-hidden="true"><span>按钮</span></span>
+            </a>
+            <div class="echo-kit-detail-nav-group is-open">
+              <a class="echo-kit-detail-nav-group-title" href="../../index.html" aria-current="location" aria-expanded="true">
+                <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="sidebar.left" alt="" aria-hidden="true"><span>主导航</span></span>
+              </a>
+              <div class="echo-kit-detail-nav-items"><a href="#tab-overview" data-detail-link="tab-overview">展示</a><a href="#tab-fields" data-detail-link="tab-fields">字段提示</a><a href="#tab-template" data-detail-link="tab-template">模板</a><a href="#tab-practice" data-detail-link="tab-practice">快速上手</a></div>
+            </div>
+            <a class="echo-kit-detail-nav-muted" href="../modal/">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="macwindow" alt="" aria-hidden="true"><span>模态窗口</span></span>
+            </a>
+            <a class="echo-kit-detail-nav-muted" href="../library-card/"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle" alt=""><span>资源库卡片</span></span></a>
+          </nav>
+          <p class="echo-visually-hidden" id="tab-filter-status" aria-live="polite"></p>
+        </aside>
+
+        <div class="echo-kit-content" id="tab-content">
+          <section class="echo-kit-detail-section echo-kit-detail-section--intro" id="tab-overview" aria-labelledby="tab-page-title">
+            <h1 class="echo-kit-component-title" id="tab-page-title">
+              <span>主导航</span>
+              <span lang="en">Tabs</span>
+            </h1>
+            <p class="echo-kit-component-copy">使用图标化 Tabs 切换应用一级视图；项目 ID 是从 0 开始的数字索引，窄屏会自动收纳为可展开的 picker。</p>
+            <div class="echo-kit-stage echo-kit-stage--tabs" aria-label="Tabs 实时展示区">
+              <nav class="echo-main-nav" id="tab-live-demo" aria-label="Tabs 实时展示"></nav>
+            </div>
+          </section>
+
+<section class="echo-kit-detail-section" id="tab-fields"><h2 class="echo-kit-component-title">字段提示</h2><p class="echo-kit-component-copy">只需提供导航数量、图标数组与当前索引；材质、交互反馈和响应式由组件统一处理。</p><div class="echo-kit-detail-table-wrap"><table class="echo-kit-detail-table"><thead><tr><th>字段名</th><th>变量名</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>导航数</td><td><code>tabs</code></td><td>number</td><td>显示的导航项数量，通常与 <code>items.length</code> 一致</td></tr><tr><td>导航项目</td><td><code>items</code></td><td>array</td><td>按顺序填写 SF Symbol 名称，也可使用对象补充无障碍名称</td></tr><tr><td>当前项目</td><td><code>activeId</code></td><td>number</td><td>从 0 开始的当前项目索引；每项的 id 自动使用其数组索引</td></tr></tbody></table></div></section>
+
+<section class="echo-kit-detail-section" id="tab-template"><h2 class="echo-kit-component-title">模板</h2><p class="echo-kit-component-copy">两个常用模板分别对应 EchoGallery 一级导航和媒体类型筛选。</p><label class="echo-kit-practice-field"><span class="echo-kit-practice-field-meta">类型</span><select class="echo-input echo-kit-practice-input" id="tab-preset"><option value="gallery">EchoGallery 时间线 · 7 项</option><option value="mediaFilter">媒体筛选器 · 3 项</option></select></label><div class="echo-kit-stage echo-kit-stage--tabs" id="tab-preset-demo"></div><pre class="echo-kit-code-block"><code id="tab-preset-code"></code></pre></section>
+
+<section class="echo-kit-detail-section echo-kit-detail-practice" id="tab-practice" aria-labelledby="tab-practice-title">
+            <div class="echo-kit-detail-heading">
+              <h2 class="echo-kit-component-title" id="tab-practice-title">快速上手</h2>
+              <p class="echo-kit-component-copy">编辑导航数量、SF Symbol 名称和当前索引；也可以点选导航，观察数字索引与代码同步。</p>
+            </div>
+
+            <div class="echo-kit-practice-fields" aria-label="Tabs 快速上手参数">
+              <label class="echo-kit-practice-field">
+                <span class="echo-kit-practice-field-meta">
+                  <span>导航数</span>
+                  <code>tabs</code>
+                </span>
+                <input class="echo-input echo-kit-practice-input" id="tab-practice-tabs" type="number" min="1" max="12" step="1" value="7" aria-label="tabs 导航数量">
+              </label>
+              <label class="echo-kit-practice-field">
+                <span class="echo-kit-practice-field-meta">
+                  <span>图标名称，以逗号分隔</span>
+                  <code>items</code>
+                </span>
+                <input class="echo-input echo-kit-practice-input" id="tab-practice-items" type="text" value="timer, heart, shuffle, photo.stack.fill, memories, trash, gearshape" autocomplete="off" spellcheck="false" aria-label="items SF Symbol 名称列表">
+              </label>
+              <label class="echo-kit-practice-field">
+                <span class="echo-kit-practice-field-meta">
+                  <span>当前项目索引（从 0 开始）</span>
+                  <code>activeId</code>
+                </span>
+                <input class="echo-input echo-kit-practice-input" id="tab-practice-active" type="number" min="0" max="6" step="1" value="0" aria-label="activeId 当前项目索引">
+              </label>
+            </div>
+
+            <div class="echo-kit-stage echo-kit-stage--tabs echo-kit-practice-stage" id="tab-practice-demo" aria-label="Tabs 快速上手展示区"></div>
+            <p class="echo-kit-component-copy" id="tab-practice-status" aria-live="polite">点击任一导航项，当前数字索引会同步到 activeId。</p>
+            <pre class="echo-kit-code-block"><code id="tab-practice-code"></code></pre>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <button class="echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
+      <img class="echo-kit-theme-fab-icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true">
+    </button>
+    <button class="echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到无背景" title="切换到无背景" aria-pressed="true">
+      <img class="echo-kit-theme-fab-icon" id="background-mode-glyph" data-echo-icon="photo.fill" alt="" aria-hidden="true">
+    </button>
+    <script type="module" src="../../router.js?v=20261009-sidebar-link-cache"></script>
+    <script type="module" src="../../preview.js?v=20261009-sidebar-filled-icons"></script>
+    <script type="module" src="./page.js"></script>
+  </body>
+</html>

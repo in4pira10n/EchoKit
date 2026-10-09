@@ -1,0 +1,128 @@
+/* EchoKit semantic tokens. Apps may override brand tokens at their own root. */
+:root {
+  color-scheme: light;
+
+  /* Web palette inspired by Apple's system colors; apps can override these. */
+  --echo-color-gray: #8e8e93;
+  --echo-color-red: #ff3b30;
+  --echo-color-orange: #ff9500;
+  --echo-color-yellow: #ffcc00;
+  --echo-color-green: #34c759;
+  --echo-color-mint: #00c7be;
+  --echo-color-teal: #30b0c7;
+  --echo-color-cyan: #32ade6;
+  --echo-color-blue: #007aff;
+  --echo-color-indigo: #5856d6;
+  --echo-color-purple: #af52de;
+  --echo-color-pink: #ff2d55;
+  --echo-color-brown: #a2845e;
+
+  --echo-color-canvas: #f2f5fa;
+  --echo-color-surface: #ffffff;
+  --echo-color-surface-raised: #ffffff;
+  --echo-color-surface-muted: #e9eef6;
+  --echo-color-surface-hover: #f5f8fc;
+  --echo-color-text: #172033;
+  --echo-color-text-secondary: #59677d;
+  --echo-color-text-tertiary: #7c899d;
+  --echo-color-border: #dce3ed;
+  --echo-color-border-strong: #c9d3e1;
+  --echo-color-accent: #2f80ff;
+  --echo-color-accent-hover: #1f6ae0;
+  --echo-color-accent-soft: #e9f2ff;
+  --echo-color-on-accent: #ffffff;
+  --echo-color-danger: #d64545;
+  --echo-color-danger-soft: #fff0ef;
+  --echo-color-action-primary: var(--echo-color-blue);
+  --echo-color-action-primary-hover: var(--echo-color-blue);
+  --echo-color-action-danger: var(--echo-color-red);
+  --echo-color-modal-surface: #ffffff;
+  --echo-color-modal-border: #ddd5c8;
+  --echo-color-modal-text: #181410;
+  --echo-color-modal-field-surface: #f7f4ef;
+  --echo-color-modal-field-border: #ddd5c8;
+  --echo-color-modal-focus: #2d6a5f;
+  --echo-color-success: #21845a;
+  --echo-color-warning: #a96a12;
+  --echo-color-focus: rgba(47, 128, 255, .28);
+
+  --echo-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --echo-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --echo-space-1: 4px;
+  --echo-space-2: 8px;
+  --echo-space-3: 12px;
+  --echo-space-4: 16px;
+  --echo-space-5: 20px;
+  --echo-space-6: 24px;
+  --echo-space-8: 32px;
+  --echo-space-10: 40px;
+  --echo-space-12: 48px;
+
+  --echo-radius-sm: 10px;
+  --echo-radius-md: 16px;
+  --echo-radius-lg: 22px;
+  --echo-radius-xl: 28px;
+  --echo-radius-pill: 999px;
+
+  --echo-shadow-card: 0 8px 24px rgba(22, 39, 67, .055);
+  --echo-shadow-floating: 0 16px 40px rgba(22, 39, 67, .12);
+  --echo-shadow-modal: 0 30px 90px rgba(8, 20, 40, .24);
+
+  --echo-motion-fast: 140ms;
+  --echo-motion-base: 200ms;
+  --echo-motion-slow: 280ms;
+  --echo-ease-standard: cubic-bezier(.2, .7, .2, 1);
+  --echo-control-height: 44px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --echo-color-gray: #8e8e93;
+  --echo-color-red: #ff453a;
+  --echo-color-orange: #ff9f0a;
+  --echo-color-yellow: #ffd60a;
+  --echo-color-green: #30d158;
+  --echo-color-mint: #63e6e2;
+  --echo-color-teal: #40c8e0;
+  --echo-color-cyan: #64d2ff;
+  --echo-color-blue: #0a84ff;
+  --echo-color-indigo: #5e5ce6;
+  --echo-color-purple: #bf5af2;
+  --echo-color-pink: #ff375f;
+  --echo-color-brown: #ac8e68;
+
+  --echo-color-canvas: #10141c;
+  --echo-color-surface: #171d28;
+  --echo-color-surface-raised: #1d2532;
+  --echo-color-surface-muted: #222c3a;
+  --echo-color-surface-hover: #263244;
+  --echo-color-text: #edf3fc;
+  --echo-color-text-secondary: #aebbd0;
+  --echo-color-text-tertiary: #8190a7;
+  --echo-color-border: #2b3748;
+  --echo-color-border-strong: #3a4960;
+  --echo-color-accent: #5b9bff;
+  --echo-color-accent-hover: #78adff;
+  --echo-color-accent-soft: #1d3455;
+  --echo-color-on-accent: #08172c;
+  --echo-color-danger: #ff7775;
+  --echo-color-danger-soft: #3c252b;
+  --echo-color-action-primary: var(--echo-color-blue);
+  --echo-color-action-primary-hover: var(--echo-color-blue);
+  --echo-color-action-danger: var(--echo-color-red);
+  --echo-color-modal-surface: #2a2a2a;
+  --echo-color-modal-border: #3a3a3a;
+  --echo-color-modal-text: #e8e0d4;
+  --echo-color-modal-field-surface: #1a1a1a;
+  --echo-color-modal-field-border: #3a3a3a;
+  --echo-color-modal-focus: #4a9d8f;
+  --echo-color-success: #63c994;
+  --echo-color-warning: #e9b45e;
+  --echo-color-focus: rgba(91, 155, 255, .34);
+
+  --echo-shadow-card: 0 8px 24px rgba(0, 0, 0, .16);
+  --echo-shadow-floating: 0 18px 46px rgba(0, 0, 0, .28);
+  --echo-shadow-modal: 0 30px 90px rgba(0, 0, 0, .48);
+}

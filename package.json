@@ -1,0 +1,54 @@
+{
+  "name": "@echo/kit",
+  "version": "0.1.0",
+  "description": "Framework-free shared UI primitives for Echo applications.",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./js/echokit.d.ts",
+      "import": "./js/echokit.js"
+    },
+    "./button": {
+      "types": "./components/button/index.d.ts",
+      "import": "./components/button/index.js"
+    },
+    "./input": {
+      "types": "./components/input/index.d.ts",
+      "import": "./components/input/index.js"
+    },
+    "./modal": {
+      "types": "./components/modal/index.d.ts",
+      "import": "./components/modal/index.js"
+    },
+    "./tab": {
+      "types": "./components/tab/index.d.ts",
+      "import": "./components/tab/index.js"
+    },
+    "./dialog": "./components/modal/index.js",
+    "./library-card": {
+      "types": "./components/library-card/index.d.ts",
+      "import": "./components/library-card/index.js"
+    },
+    "./metric": {
+      "types": "./components/metric/index.d.ts",
+      "import": "./components/metric/index.js"
+    },
+    "./css": "./css/echokit.css",
+    "./tokens": "./tokens/tokens.css",
+    "./icon": {
+      "types": "./components/icon.d.ts",
+      "import": "./components/icon.js"
+    },
+    "./symbols/*": "./SFSymbols/*.svg"
+  },
+  "files": [
+    "assets",
+    "components",
+    "css",
+    "js",
+    "SFSymbols",
+    "tokens",
+    "README.md"
+  ]
+}

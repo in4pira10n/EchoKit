@@ -1,0 +1,49 @@
+.echo-card {
+  min-width: 0;
+  border: 1px solid var(--echo-color-border);
+  border-radius: var(--echo-radius-lg);
+  background: var(--echo-color-surface);
+  box-shadow: var(--echo-shadow-card);
+}
+
+.echo-card--padded {
+  padding: clamp(18px, 2vw, 24px);
+}
+
+.echo-card--interactive {
+  transition:
+    border-color var(--echo-motion-base) var(--echo-ease-standard),
+    background var(--echo-motion-base) var(--echo-ease-standard),
+    transform var(--echo-motion-base) var(--echo-ease-standard),
+    box-shadow var(--echo-motion-base) var(--echo-ease-standard);
+}
+
+.echo-card--interactive:hover {
+  transform: translateY(-2px);
+  border-color: var(--echo-color-border-strong);
+  background: var(--echo-color-surface-hover);
+  box-shadow: var(--echo-shadow-floating);
+}
+
+.echo-card__eyebrow {
+  margin: 0 0 7px;
+  color: var(--echo-color-text-tertiary);
+  font-size: .72rem;
+  font-weight: 720;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.echo-card__title {
+  margin: 0;
+  color: var(--echo-color-text);
+  font-size: 1rem;
+  font-weight: 680;
+  letter-spacing: -.02em;
+}
+
+.echo-card__copy {
+  margin: 7px 0 0;
+  color: var(--echo-color-text-secondary);
+  font-size: .88rem;
+}

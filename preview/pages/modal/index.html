@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="echo-kit-detail-page" lang="zh-CN" data-theme="dark" data-stage-background="on">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" href="data:,">
+    <title>Modal · The Echo’s Design Kit</title>
+    <link rel="stylesheet" href="../../../css/echokit.css?v=20261008-system-colors">
+    <link rel="stylesheet" href="../../preview.css?v=20261009-sidebar-filled-icons">
+    <link rel="stylesheet" href="./page.css">
+  </head>
+  <body class="echo-root">
+    <div class="echo-kit-showcase echo-kit-detail" id="top">
+      <header class="echo-kit-topbar">
+        <div class="echo-kit-breadcrumbs" aria-label="当前位置">
+          <a class="echo-kit-brand" href="../../index.html">The Echo’s Design Kit</a>
+          <img class="echo-kit-breadcrumb-chevron" data-echo-icon="chevron.left" alt="" aria-hidden="true">
+          <span class="echo-kit-breadcrumb-current">Modal</span>
+        </div>
+        <nav class="echo-kit-topnav" aria-label="顶部导航，暂未开放">
+          <span aria-disabled="true">Overview</span>
+          <span aria-disabled="true">What’s new</span>
+          <span aria-disabled="true">Resources</span>
+          <button class="echo-kit-search" type="button" aria-label="搜索暂未开放" disabled>
+            <img class="echo-kit-search-icon" data-echo-icon="magnifyingglass" alt="" aria-hidden="true">
+          </button>
+        </nav>
+      </header>
+
+      <main class="echo-kit-layout">
+        <aside class="echo-kit-sidebar" aria-label="模态窗口文档目录">
+          <label class="echo-kit-filter">
+            <img class="echo-kit-filter-icon" data-echo-icon="magnifyingglass" alt="" aria-hidden="true">
+            <input id="modal-section-filter" type="search" placeholder="Filter" autocomplete="off" aria-label="筛选模态窗口文档">
+          </label>
+          <nav class="echo-kit-detail-nav" aria-label="模态窗口文档章节">
+            <a class="echo-kit-detail-nav-muted" href="../button/">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="button.programmable" alt="" aria-hidden="true"><span>按钮</span></span>
+            </a>
+            <a class="echo-kit-detail-nav-muted" href="../tab/">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="sidebar.left" alt="" aria-hidden="true"><span>主导航</span></span>
+            </a>
+            <div class="echo-kit-detail-nav-group is-open">
+              <a class="echo-kit-detail-nav-group-title" href="../../index.html" aria-current="location" aria-expanded="true">
+                <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="macwindow" alt="" aria-hidden="true"><span>模态窗口</span></span>
+              </a>
+              <div class="echo-kit-detail-nav-items"><a href="#modal-overview" data-detail-link="modal-overview">展示</a><a href="#modal-fields" data-detail-link="modal-fields">字段提示</a><a href="#modal-best-practice" data-detail-link="modal-best-practice">最佳实践</a><a href="#modal-practice" data-detail-link="modal-practice">快速上手</a></div>
+            </div>
+            <a class="echo-kit-detail-nav-muted" href="../library-card/"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle" alt=""><span>资源库卡片</span></span></a>
+          </nav>
+          <p class="echo-visually-hidden" id="modal-filter-status" aria-live="polite"></p>
+        </aside>
+
+        <div class="echo-kit-content" id="modal-content">
+          <section class="echo-kit-detail-section echo-kit-detail-section--intro" id="modal-overview" aria-labelledby="modal-page-title">
+            <h1 class="echo-kit-component-title" id="modal-page-title">
+              <span>模态窗口</span>
+              <span lang="en">Modal</span>
+            </h1>
+            <p class="echo-kit-component-copy">把需要确认或填写的短流程置于前景，并负责焦点、遮罩和退出行为。</p>
+            <div class="echo-kit-stage echo-kit-stage--modal" aria-label="Modal 实时展示区">
+              <form class="echo-kit-modal-preview echo-modal" id="modal-demo-form" aria-labelledby="modal-demo-title">
+                <div class="echo-modal__header">
+                  <span class="echo-modal__mark" aria-hidden="true"><img data-echo-icon="slider.horizontal.3" alt=""></span>
+                  <div>
+                    <h3 class="echo-modal__title" id="modal-demo-title">编辑资料</h3>
+                    <p class="echo-modal__copy">请填写以下信息，完成后即可继续。</p>
+                  </div>
+                </div>
+                <div class="echo-kit-modal-fields">
+                  <label class="echo-field">
+                    <span class="echo-field__label">显示名称</span>
+                    <input class="echo-input" name="displayName" type="text" placeholder="请输入内容">
+                  </label>
+                  <label class="echo-field">
+                    <span class="echo-field__label">资源库路径</span>
+                    <input class="echo-input" name="libraryPath" type="text" placeholder="请输入内容">
+                  </label>
+                  <label class="echo-field">
+                    <span class="echo-field__label">备注说明</span>
+                    <input class="echo-input" name="notes" type="text" placeholder="请输入内容">
+                  </label>
+                </div>
+                <div class="echo-modal__footer">
+                  <button class="echo-button" type="reset">
+                    <span class="echo-button__icon-wrap"><img class="echo-button__icon" data-echo-icon="xmark" alt="" aria-hidden="true"></span>
+                    <span class="echo-button__label">取消</span>
+                  </button>
+                  <button class="echo-button echo-button--primary" id="modal-demo-submit" type="submit">
+                    <span class="echo-button__icon-wrap"><img class="echo-button__icon" data-echo-icon="checkmark" alt="" aria-hidden="true"></span>
+                    <span class="echo-button__label">完成</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+<section class="echo-kit-detail-section" id="modal-fields"><h2 class="echo-kit-component-title">字段提示</h2><p class="echo-kit-component-copy">只需要图标、标题、说明、内容和操作；遮罩、焦点和响应式由 Modal 统一处理。</p><div class="echo-kit-detail-table-wrap"><table class="echo-kit-detail-table"><thead><tr><th>字段</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>icon</code></td><td>url / sf_symbols_name</td><td>标题旁的图标，可省略</td></tr><tr><td><code>title</code></td><td>text</td><td>窗口标题</td></tr><tr><td><code>addition</code></td><td>text</td><td>标题下的补充说明</td></tr><tr><td><code>content</code></td><td>array&lt;node, function&gt;</td><td>窗口正文组件</td></tr><tr><td><code>actions</code></td><td>array&lt;button&gt;</td><td>底部操作按钮</td></tr></tbody></table></div></section>
+
+<section class="echo-kit-detail-section" id="modal-best-practice"><h2 class="echo-kit-component-title">最佳实践</h2><p class="echo-kit-component-copy">使用 EchoKit 的表单和按钮组合独立任务。</p><h3>资料编辑窗口</h3><div class="echo-kit-stage" data-modal-example="profile"></div><h3>EchoGallery 资源库编辑卡</h3><div class="echo-kit-stage" data-modal-example="library"></div></section>
+
+<section class="echo-kit-detail-section echo-kit-detail-practice" id="modal-practice" aria-labelledby="modal-practice-title">
+            <div class="echo-kit-detail-heading">
+              <h2 class="echo-kit-component-title" id="modal-practice-title">快速上手</h2>
+              <p class="echo-kit-component-copy">修改配置实时更新窗口；点击底部按钮测试操作，窗口保持显示。</p>
+            </div>
+
+            <div class="echo-kit-practice-fields" aria-label="Modal 快速上手参数">
+              <label class="echo-kit-practice-field">
+                <span class="echo-kit-practice-field-meta">
+                  <span>标题</span>
+                  <code>title</code>
+                </span>
+                <input class="echo-input echo-kit-practice-input" id="modal-practice-title-input" type="text" value="编辑资料" autocomplete="off" aria-label="title 模态窗口标题">
+              </label>
+              <label class="echo-kit-practice-field">
+                <span class="echo-kit-practice-field-meta">
+                  <span>说明</span>
+                <code>addition</code>
+                </span>
+                <input class="echo-input echo-kit-practice-input" id="modal-practice-copy" type="text" value="请填写以下信息，完成后即可继续。" autocomplete="off" aria-label="copy 模态窗口说明">
+              </label>
+              <label class="echo-kit-practice-field">
+                <span class="echo-kit-practice-field-meta">
+                  <span>取消文本</span>
+                  <code>actions[0].label</code>
+                </span>
+                <input class="echo-input echo-kit-practice-input" id="modal-practice-cancel" type="text" value="取消" autocomplete="off" aria-label="取消操作文本">
+              </label>
+              <label class="echo-kit-practice-field">
+                <span class="echo-kit-practice-field-meta">
+                  <span>确认文本</span>
+                  <code>actions[1].label</code>
+                </span>
+                <input class="echo-input echo-kit-practice-input" id="modal-practice-confirm" type="text" value="完成" autocomplete="off" aria-label="确认操作文本">
+              </label>
+            </div>
+
+            <div class="echo-kit-stage echo-kit-practice-stage" id="modal-practice-demo" aria-label="Modal 快速上手展示区"></div>
+            <p class="echo-kit-component-copy" id="modal-practice-status" aria-live="polite">直接点击确认按钮验证操作回调，展示窗口不会关闭。</p>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+    <button class="echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
+      <img class="echo-kit-theme-fab-icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true">
+    </button>
+    <button class="echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到无背景" title="切换到无背景" aria-pressed="true">
+      <img class="echo-kit-theme-fab-icon" id="background-mode-glyph" data-echo-icon="photo.fill" alt="" aria-hidden="true">
+    </button>
+    <script type="module" src="../../router.js?v=20261009-sidebar-link-cache"></script>
+    <script type="module" src="../../preview.js?v=20261009-sidebar-filled-icons"></script>
+    <script type="module" src="./page.js"></script>
+  </body>
+</html>

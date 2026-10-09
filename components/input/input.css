@@ -1,0 +1,71 @@
+.echo-field {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.echo-field__label {
+  color: var(--echo-color-text-secondary);
+  font-size: .84rem;
+  font-weight: 640;
+}
+
+.echo-input {
+  width: 100%;
+  min-height: var(--echo-control-height);
+  padding: 0 14px;
+  border: 1px solid var(--echo-color-border);
+  border-radius: var(--echo-radius-md);
+  background: var(--echo-color-surface);
+  color: var(--echo-color-text);
+  font-size: .94rem;
+  transition:
+    border-color var(--echo-motion-fast) var(--echo-ease-standard),
+    box-shadow var(--echo-motion-fast) var(--echo-ease-standard),
+    background var(--echo-motion-fast) var(--echo-ease-standard);
+}
+
+textarea.echo-input {
+  min-height: 96px;
+  padding-block: 11px;
+  resize: vertical;
+}
+
+.echo-input::placeholder {
+  color: var(--echo-color-text-tertiary);
+}
+
+.echo-input:hover:not(:disabled) {
+  border-color: var(--echo-color-border-strong);
+}
+
+.echo-input:focus {
+  border-color: var(--echo-color-accent);
+  box-shadow: 0 0 0 4px var(--echo-color-focus);
+  outline: 0;
+}
+
+.echo-input:disabled {
+  background: var(--echo-color-surface-muted);
+  color: var(--echo-color-text-tertiary);
+  cursor: not-allowed;
+}
+
+.echo-field__hint {
+  color: var(--echo-color-text-tertiary);
+  font-size: .78rem;
+}
+
+.echo-field--error .echo-input {
+  border-color: var(--echo-color-danger);
+}
+
+.echo-field--error .echo-field__hint {
+  color: var(--echo-color-danger);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .echo-input {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark" data-stage-background="on">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" href="data:,">
+    <title>The Echo’s Design Kit · EchoKit</title>
+    <link rel="stylesheet" href="../css/echokit.css?v=20261008-system-colors">
+    <link rel="stylesheet" href="./preview.css?v=20261009-sidebar-filled-icons">
+  </head>
+  <body class="echo-root">
+    <div class="echo-kit-showcase" id="top">
+      <header class="echo-kit-topbar">
+        <span class="echo-kit-brand">The Echo’s Design Kit</span>
+        <nav class="echo-kit-topnav" aria-label="顶部导航，暂未开放">
+          <span aria-disabled="true">Overview</span>
+          <span aria-disabled="true">What’s new</span>
+          <span aria-disabled="true">Resources</span>
+          <button class="echo-kit-search" type="button" aria-label="搜索暂未开放" disabled>
+            <img class="echo-kit-search-icon" data-echo-icon="magnifyingglass" alt="" aria-hidden="true">
+          </button>
+        </nav>
+      </header>
+
+      <main class="echo-kit-layout">
+        <aside class="echo-kit-sidebar" aria-label="组件目录">
+          <label class="echo-kit-filter">
+            <img class="echo-kit-filter-icon" data-echo-icon="magnifyingglass" alt="" aria-hidden="true">
+            <input id="component-filter" type="search" placeholder="Filter" autocomplete="off" aria-label="筛选组件">
+          </label>
+          <nav class="echo-kit-categories" aria-label="组件类别">
+            <a href="./pages/button/" data-category-link="button">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="button.programmable" alt="" aria-hidden="true"><span>按钮</span></span>
+            </a>
+            <a href="./pages/tab/" data-category-link="tab">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="sidebar.left" alt="" aria-hidden="true"><span>主导航</span></span>
+            </a>
+            <a href="./pages/modal/" data-category-link="modal">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="macwindow" alt="" aria-hidden="true"><span>模态窗口</span></span>
+            </a>
+            <a href="./pages/library-card/" data-category-link="library-card">
+              <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle" alt="" aria-hidden="true"><span>资源库卡片</span></span>
+            </a>
+          </nav>
+          <p class="echo-visually-hidden" id="filter-status" aria-live="polite"></p>
+        </aside>
+
+        <div class="echo-kit-content echo-kit-components" id="components">
+          <section class="echo-kit-component" id="button-section" data-component="button" aria-labelledby="button-title">
+            <h1 class="echo-kit-component-title" id="button-title">
+              <a class="echo-kit-component-title-link" href="./pages/button/">
+                <span>按钮</span>
+                <span lang="en">Button</span>
+              </a>
+            </h1>
+            <p class="echo-kit-component-copy">按钮用于触发明确的即时操作；点击展示按钮可切换默认、危险和完成状态。</p>
+            <div class="echo-kit-stage" aria-label="按钮控件展示区">
+              <button class="echo-button" id="button-demo" type="button" data-button-state="default" aria-label="取消，点击切换按钮状态" title="点击切换按钮状态">
+                <span class="echo-button__icon-wrap"><img class="echo-button__icon" data-echo-icon="xmark" alt="" aria-hidden="true"></span>
+                <span class="echo-button__label">取消</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="echo-kit-component" id="tab-section" data-component="tab" aria-labelledby="tab-title">
+            <h2 class="echo-kit-component-title" id="tab-title">
+              <a class="echo-kit-component-title-link" href="./pages/tab/">
+                <span>主导航</span>
+                <span lang="en">Tabs</span>
+              </a>
+            </h2>
+            <p class="echo-kit-component-copy">标签栏用于切换应用的主要视图，并标示当前所在位置。</p>
+            <div class="echo-kit-stage echo-kit-stage--tabs" aria-label="标签页控件展示区">
+              <nav class="echo-main-nav" id="main-nav" aria-label="EchoGallery 主视图示例"></nav>
+            </div>
+          </section>
+
+          <section class="echo-kit-component" id="modal-section" data-component="modal" aria-labelledby="modal-title">
+            <h2 class="echo-kit-component-title" id="modal-title">
+              <a class="echo-kit-component-title-link" href="./pages/modal/">
+                <span>模态窗口</span>
+                <span lang="en">Modal</span>
+              </a>
+            </h2>
+            <p class="echo-kit-component-copy">模态窗口将独立任务置于前景，并提供清晰的完成或取消操作。</p>
+            <div class="echo-kit-stage echo-kit-stage--modal" aria-label="模态控件展示区">
+              <form class="echo-kit-modal-preview echo-modal" id="modal-demo-form" aria-labelledby="modal-demo-title">
+                <div class="echo-modal__header">
+                  <span class="echo-modal__mark" aria-hidden="true"><img data-echo-icon="wrench.and.screwdriver" alt=""></span>
+                  <div>
+                    <h3 class="echo-modal__title" id="modal-demo-title">编辑资料</h3>
+                    <p class="echo-modal__copy">请填写以下信息，完成后即可继续。</p>
+                  </div>
+                </div>
+                <div class="echo-kit-modal-fields">
+                  <label class="echo-field">
+                    <span class="echo-field__label">显示名称</span>
+                    <input class="echo-input" name="displayName" type="text" placeholder="请输入内容">
+                  </label>
+                  <label class="echo-field">
+                    <span class="echo-field__label">资源库路径</span>
+                    <input class="echo-input" name="libraryPath" type="text" placeholder="请输入内容">
+                  </label>
+                  <label class="echo-field">
+                    <span class="echo-field__label">备注说明</span>
+                    <input class="echo-input" name="notes" type="text" placeholder="请输入内容">
+                  </label>
+                </div>
+                <div class="echo-modal__footer">
+                  <button class="echo-button" type="reset">
+                    <span class="echo-button__icon-wrap"><img class="echo-button__icon" data-echo-icon="xmark" alt="" aria-hidden="true"></span>
+                    <span class="echo-button__label">取消</span>
+                  </button>
+                  <button class="echo-button echo-button--primary" id="modal-demo-submit" type="submit">
+                    <span class="echo-button__icon-wrap"><img class="echo-button__icon" data-echo-icon="checkmark" alt="" aria-hidden="true"></span>
+                    <span class="echo-button__label">完成</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section class="echo-kit-component" id="library-card-section" data-component="library-card">
+            <h2 class="echo-kit-component-title"><a class="echo-kit-component-title-link" href="./pages/library-card/"><span>资源库卡片</span><span lang="en">Library Card</span></a></h2>
+            <p class="echo-kit-component-copy">展示头像、名称、路径、主题配色和统计信息，并标示当前资源库与可用状态。</p>
+            <div class="echo-kit-stage" data-library-demo aria-label="资源库卡片展示区"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <button class="echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
+      <img class="echo-kit-theme-fab-icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true">
+    </button>
+    <button class="echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到无背景" title="切换到无背景" aria-pressed="true">
+      <img class="echo-kit-theme-fab-icon" id="background-mode-glyph" data-echo-icon="photo.fill" alt="" aria-hidden="true">
+    </button>
+    <script type="module" src="./router.js?v=20261009-sidebar-link-cache"></script>
+    <script type="module" src="./preview.js?v=20261009-sidebar-filled-icons"></script>
+  </body>
+</html>
