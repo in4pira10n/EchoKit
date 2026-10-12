@@ -66,8 +66,8 @@ import { createEchoButton } from "@echo/kit/button";
 | Variant | Intended meaning | CSS class |
 | --- | --- | --- |
 | `default` | Neutral action | `.echo-button` |
-| `primary` | Main confirmation or submit action | `.echo-button--primary` |
-| `complete` | Successful or completed action | `.echo-button--complete` |
+| `primary` | Main confirmation or submit action; uses iOS system blue by default | `.echo-button--primary` |
+| `complete` | Successful or completed action; uses iOS system blue by default | `.echo-button--complete` |
 | `danger` | Destructive action | `.echo-button--danger` |
 | `quiet` | Low-emphasis action | `.echo-button--quiet` |
 | `switch` | Neutral glass treatment for an icon toggle or switch | `.echo-button--switch` |

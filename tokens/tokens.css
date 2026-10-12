@@ -27,14 +27,16 @@
   --echo-color-text-tertiary: #7c899d;
   --echo-color-border: #dce3ed;
   --echo-color-border-strong: #c9d3e1;
-  --echo-color-accent: #2f80ff;
-  --echo-color-accent-hover: #1f6ae0;
-  --echo-color-accent-soft: #e9f2ff;
+  --echo-color-accent: #636366;
+  --echo-color-accent-hover: #48484a;
+  --echo-color-accent-soft: #e5e5ea;
   --echo-color-on-accent: #ffffff;
   --echo-color-danger: #d64545;
   --echo-color-danger-soft: #fff0ef;
   --echo-color-action-primary: var(--echo-color-blue);
-  --echo-color-action-primary-hover: var(--echo-color-blue);
+  --echo-color-action-primary-hover: #0066d6;
+  --echo-color-action-complete: var(--echo-color-blue);
+  --echo-color-action-complete-hover: #0066d6;
   --echo-color-action-danger: var(--echo-color-red);
   --echo-color-modal-surface: #ffffff;
   --echo-color-modal-border: #ddd5c8;
@@ -44,7 +46,7 @@
   --echo-color-modal-focus: #2d6a5f;
   --echo-color-success: #21845a;
   --echo-color-warning: #a96a12;
-  --echo-color-focus: rgba(47, 128, 255, .28);
+  --echo-color-focus: rgba(60, 60, 67, .28);
 
   --echo-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --echo-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -103,14 +105,16 @@
   --echo-color-text-tertiary: #8190a7;
   --echo-color-border: #2b3748;
   --echo-color-border-strong: #3a4960;
-  --echo-color-accent: #5b9bff;
-  --echo-color-accent-hover: #78adff;
-  --echo-color-accent-soft: #1d3455;
-  --echo-color-on-accent: #08172c;
+  --echo-color-accent: #d1d1d6;
+  --echo-color-accent-hover: #f2f2f7;
+  --echo-color-accent-soft: #38383a;
+  --echo-color-on-accent: #ffffff;
   --echo-color-danger: #ff7775;
   --echo-color-danger-soft: #3c252b;
   --echo-color-action-primary: var(--echo-color-blue);
-  --echo-color-action-primary-hover: var(--echo-color-blue);
+  --echo-color-action-primary-hover: #409cff;
+  --echo-color-action-complete: var(--echo-color-blue);
+  --echo-color-action-complete-hover: #409cff;
   --echo-color-action-danger: var(--echo-color-red);
   --echo-color-modal-surface: #2a2a2a;
   --echo-color-modal-border: #3a3a3a;
@@ -120,7 +124,7 @@
   --echo-color-modal-focus: #4a9d8f;
   --echo-color-success: #63c994;
   --echo-color-warning: #e9b45e;
-  --echo-color-focus: rgba(91, 155, 255, .34);
+  --echo-color-focus: rgba(209, 209, 214, .34);
 
   --echo-shadow-card: 0 8px 24px rgba(0, 0, 0, .16);
   --echo-shadow-floating: 0 18px 46px rgba(0, 0, 0, .28);

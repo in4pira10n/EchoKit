@@ -38,7 +38,7 @@ From this directory, run:
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173/preview/`. The preview has a light/dark switch, responsive layouts, the seven-view EchoGallery main navigation (which collapses to a picker on narrow screens), and an accessible overlay modal with focus trapping and restoration. The home page also demonstrates Segmented Control, Input, and Setting Row. Component detail pages live at `/preview/pages/button/`, `/preview/pages/tab/`, and `/preview/pages/modal/`. On each detail page, the expanded component title returns to the home page and collapses its secondary navigation; the other component titles remain available for navigation.
+Then open `http://localhost:4173/preview/`. The preview has a light/dark switch, responsive layouts, the seven-view EchoGallery main navigation (which collapses to a picker on narrow screens), and an accessible overlay modal with focus trapping and restoration. The home page also demonstrates Segmented Control, Input, and Setting Row. Component detail pages live at `/preview/pages/button/`, `/preview/pages/tab/`, `/preview/pages/modal/`, and `/preview/pages/library-card/`. The `/preview/pages/` directory redirects to the preview home. On each detail page, the expanded component title returns to the home page and collapses its secondary navigation; the other component titles remain available for navigation.
 
 ## Add EchoKit to a web app
 

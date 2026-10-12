@@ -7,9 +7,9 @@
     <meta name="color-scheme" content="dark light">
     <link rel="icon" href="data:,">
     <title>Button · The Echo’s Design Kit</title>
-    <link rel="stylesheet" href="../../../css/echokit.css?v=20261010-card-interaction-contrast">
-    <link rel="stylesheet" href="../../preview.css?v=20261010-panel-input">
-    <link rel="stylesheet" href="./page.css?v=20261010-shared-practice-fields">
+    <link rel="stylesheet" href="../../../css/echokit.css?v=20261011-complete-blue">
+    <link rel="stylesheet" href="../../preview.css?v=20261011-complete-blue">
+    <link rel="stylesheet" href="./page.css?v=20261010-detail-sidebar-full-nav">
   </head>
   <body class="echo-root">
     <div class="echo-kit-showcase echo-kit-detail" id="top">
@@ -50,6 +50,9 @@
               <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="macwindow" alt="" aria-hidden="true"><span>模态窗口</span></span>
             </a>
             <a class="echo-kit-detail-nav-muted" href="../library-card/"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle" alt=""><span>资源库卡片</span></span></a>
+            <a class="echo-kit-detail-nav-muted" href="../../index.html#segmented-section"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="slider.horizontal.3" alt=""><span>分段选择器</span></span></a>
+            <a class="echo-kit-detail-nav-muted" href="../../index.html#input-section"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle.and.pencil.and.ellipsis" alt=""><span>输入框</span></span></a>
+            <a class="echo-kit-detail-nav-muted" href="../../index.html#setting-row-section"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="gearshape.2" alt=""><span>设置行</span></span></a>
           </nav>
           <p class="echo-visually-hidden" id="button-filter-status" aria-live="polite"></p>
         </aside>
@@ -64,24 +67,26 @@
             <div class="echo-kit-stage" aria-label="按钮控件展示区"><button class="echo-button" id="button-demo" type="button"><span class="echo-button__icon-wrap"><img class="echo-button__icon" data-echo-icon="xmark" alt="" aria-hidden="true"></span><span class="echo-button__label">取消</span></button></div>
           </section>
 
-<section class="echo-kit-detail-section" id="button-fields"><h2 class="echo-kit-component-title">字段提示</h2><p class="echo-kit-component-copy">只需要图标、文本和主色；响应式、材质与交互反馈由按钮内建。</p><div class="echo-kit-detail-table-wrap"><table class="echo-kit-detail-table"><thead><tr><th>字段名</th><th>变量名</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>图标</td><td><code>icon</code></td><td>url / sf_symbols_name</td><td>SF Symbol 直接写名字，例如 <code>checkmark</code>；自定义图标传 URL</td></tr><tr><td>文本</td><td><code>label</code></td><td>text</td><td>简短、明确地描述按钮动作</td></tr><tr><td>主色</td><td><code>color</code></td><td>hex / text</td><td>使用系统颜色名（如 blue、gray、red），也可填写 HEX 自定义颜色</td></tr></tbody></table></div></section>
+<section class="echo-kit-detail-section" id="button-fields"><h2 class="echo-kit-component-title">字段提示</h2><p class="echo-kit-component-copy">只需要图标、文本和主色；响应式、材质与交互反馈由按钮内建。</p><div class="echo-kit-detail-table-wrap"><table class="echo-kit-detail-table"><thead><tr><th>字段名</th><th>变量名</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>图标</td><td><code>icon</code></td><td>url / sf_symbols_name</td><td>SF Symbol 直接写名字，例如 <code>checkmark</code>；自定义图标传 URL</td></tr><tr><td>文本</td><td><code>label</code></td><td>text</td><td>简短、明确地描述按钮动作</td></tr><tr><td>主色</td><td><code>color</code></td><td>hex / text</td><td>默认使用中性色，也可填写系统颜色名或 HEX 自定义颜色</td></tr></tbody></table></div></section>
 
 <section class="echo-kit-detail-section" id="button-template"><h2 class="echo-kit-component-title">模板</h2><p class="echo-kit-component-copy">按操作语义选择预设；每个模板都由 SF Symbol 名称、文本与颜色组成。</p><label class="echo-kit-practice-field"><span class="echo-kit-practice-field-meta">类型</span><select class="echo-input echo-kit-practice-input" id="button-preset"><option value="default">中性 · 取消</option><option value="complete">完成 · 完成</option><option value="primary">主要操作 · 保存</option><option value="danger">危险 · 删除</option><option value="switch">切换 · 外观</option></select></label><div class="echo-kit-stage" id="button-preset-demo"></div><pre class="echo-kit-code-block"><code id="button-preset-code"></code></pre></section>
 
-<section class="echo-kit-detail-section echo-kit-detail-practice" id="button-practice"><div class="echo-kit-detail-heading"><h2 class="echo-kit-component-title">快速上手</h2><p class="echo-kit-component-copy">输入 SF Symbol 名称或自定义图标 URL，搭配文本与颜色实时预览。</p></div><div class="echo-kit-practice-fields"><label class="echo-kit-practice-field"><span class="echo-kit-practice-field-meta"><span>图标名称 / URL</span><code>icon</code></span><input class="echo-input echo-kit-practice-input" id="button-practice-icon" type="text" value="checkmark" placeholder="checkmark 或 https://…" autocomplete="off"><span class="echo-kit-component-copy">SF Symbol 直接输入名称即可，例如 <code>checkmark</code>。</span></label><label class="echo-kit-practice-field"><span class="echo-kit-practice-field-meta"><span>文本</span><code>label</code></span><input class="echo-input echo-kit-practice-input" id="button-practice-label" type="text" value="完成"></label><label class="echo-kit-practice-field"><span class="echo-kit-practice-field-meta"><span>主色</span><code>color</code></span><div class="echo-kit-practice-color-row"><input class="echo-input echo-kit-practice-input" id="button-practice-color" type="text" value="#2f80ff" spellcheck="false" aria-label="按钮主色 HEX"><input id="button-practice-swatch" type="color" value="#2f80ff" aria-label="选择按钮颜色"></div></label></div><div class="echo-kit-stage" id="button-practice-demo"></div><p class="echo-kit-component-copy" id="button-practice-status" aria-live="polite"></p></section>
+<section class="echo-kit-detail-section echo-kit-detail-practice" id="button-practice"><div class="echo-kit-detail-heading"><h2 class="echo-kit-component-title">快速上手</h2><p class="echo-kit-component-copy">输入 SF Symbol 名称或自定义图标 URL，搭配文本与颜色实时预览。</p></div><div class="echo-kit-practice-fields"><label class="echo-kit-practice-field"><span class="echo-kit-practice-field-meta"><span>图标名称 / URL</span><code>icon</code></span><input class="echo-input echo-kit-practice-input" id="button-practice-icon" type="text" value="checkmark" placeholder="checkmark 或 https://…" autocomplete="off"><span class="echo-kit-component-copy">SF Symbol 直接输入名称即可，例如 <code>checkmark</code>。</span></label><label class="echo-kit-practice-field"><span class="echo-kit-practice-field-meta"><span>文本</span><code>label</code></span><input class="echo-input echo-kit-practice-input" id="button-practice-label" type="text" value="完成"></label><label class="echo-kit-practice-field"><span class="echo-kit-practice-field-meta"><span>主色</span><code>color</code></span><div class="echo-kit-practice-color-row"><input class="echo-input echo-kit-practice-input" id="button-practice-color" type="text" value="#636366" spellcheck="false" aria-label="按钮主色 HEX"><input id="button-practice-swatch" type="color" value="#636366" aria-label="选择按钮颜色"></div></label></div><div class="echo-kit-stage" id="button-practice-demo"></div><p class="echo-kit-component-copy" id="button-practice-status" aria-live="polite"></p></section>
         </div>
       </main>
     </div>
 
-    <button class="echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
-      <img class="echo-kit-theme-fab-icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true">
+    <button class="echo-button echo-button--switch echo-button--icon echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
+      <span class="echo-button__icon-wrap"><img class="echo-button__icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true"></span>
+      <span class="echo-button__label">外观</span>
     </button>
-    <button class="echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到有背景" title="切换到有背景" aria-pressed="false">
-      <img class="echo-kit-theme-fab-icon" id="background-mode-glyph" data-echo-icon="photo.fill" alt="" aria-hidden="true">
+    <button class="echo-button echo-button--switch echo-button--icon echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到有背景" title="切换到有背景" aria-pressed="false">
+      <span class="echo-button__icon-wrap"><img class="echo-button__icon" id="background-mode-glyph" data-echo-icon="photo" alt="" aria-hidden="true"></span>
+      <span class="echo-button__label">背景</span>
     </button>
 
     <script type="module" src="../../router.js?v=20261009-sidebar-link-cache"></script>
-    <script type="module" src="../../preview.js?v=20261010-card-interaction-contrast"></script>
-    <script type="module" src="./page.js"></script>
+    <script type="module" src="../../preview.js?v=20261011-complete-blue"></script>
+    <script type="module" src="./page.js?v=20261011-complete-blue"></script>
   </body>
 </html>

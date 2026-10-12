@@ -44,7 +44,7 @@ EchoKit 内置 SF Symbols。SF Symbol 与自定义图标都保留资源自身的
 | danger | trash | 删除 | red |
 | switch | sun.max | 切换外观 | gray |
 
-模板名称描述用途，`color` 仅描述颜色。切换模板另设 `variant: 'switch'`，保留无染色玻璃效果。颜色 token 使用 `--echo-color-blue` 等名称，适配深浅色，可由应用覆盖。这是网页调色板，不是 UIKit 原生动态颜色 API；Apple 系统色会随平台和系统版本变化，不将示例 HEX 视为永久规范。遵循 HIG，不仅依赖颜色传达含义，并检查深浅色、半透明背景与对比度。
+模板名称描述用途，`color` 仅描述颜色。`primary` 与 `complete` 模板默认使用 iOS 系统蓝色；切换模板另设 `variant: 'switch'`，保留无染色玻璃效果。颜色 token 使用 `--echo-color-blue` 等名称，适配深浅色，可由应用覆盖。这是网页调色板，不是 UIKit 原生动态颜色 API；Apple 系统色会随平台和系统版本变化，不将示例 HEX 视为永久规范。遵循 HIG，不仅依赖颜色传达含义，并检查深浅色、半透明背景与对比度。
 
 # 2. 导航 Tabs
 
@@ -99,7 +99,7 @@ const profileModal = createEchoModal({
   ],
   actions: [
     { icon: 'xmark', label: '取消', color: 'gray' },
-    { icon: 'checkmark', label: '完成', color: 'blue' },
+    { icon: 'checkmark', label: '完成', variant: 'complete' },
   ],
 });
 ```
@@ -131,7 +131,7 @@ const card = createEchoLibraryCard({
   icon: 'photo',
   title: 'EchoGallery',
   addition: '/home/Pictures/EchoGallery',
-  attachment: ['#2f80ff', '#68a7ff', '#9bc7ff', '#c7def8', '#dce9f6', '#f1f5fa'],
+  attachment: ['#636366', '#79797e', '#929297', '#aaaab0', '#c4c4ca', '#dedee3'],
   content: [
     () => createEchoMetric({ icon: 'calendar', label: '创建日期', value: '2026-10-08' }),
     () => createEchoMetric({ icon: 'clock', label: '上次扫描', value: '尚未扫描' }),

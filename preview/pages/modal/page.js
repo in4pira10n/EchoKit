@@ -1,4 +1,4 @@
-import { mountModalDemo } from '../../modal-demo.js';
+import { mountModalDemo } from '../../modal-demo.js?v=20261011-complete-blue';
 import { createEchoField } from "../../../components/input/index.js";
 import { createEchoModal } from "../../../components/modal/index.js";
 import { installDetailNavInteractions } from "../detail-nav.js";
@@ -49,7 +49,7 @@ function mountPracticeModal() {
       {
         label: practiceConfirmInput?.value.trim() || "完成",
         icon: "checkmark",
-        color: "blue",
+        variant: "complete",
         close: false,
         onClick: () => {
           if (practiceStatus) practiceStatus.textContent = "确认操作已触发，展示窗口保持打开。";

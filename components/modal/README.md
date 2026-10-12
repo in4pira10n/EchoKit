@@ -14,7 +14,7 @@ const modal = createEchoModal({
   content: (body) => body.append(createEchoField({ label: "名称", name: "name" })),
   actions: [
     { label: "取消", icon: "xmark", color: "gray" },
-    { label: "保存", icon: "square.and.arrow.down", color: "blue" },
+    { label: "保存", icon: "square.and.arrow.down", color: "gray" },
   ],
 });
 document.body.append(modal);

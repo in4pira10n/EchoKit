@@ -7,8 +7,8 @@
     <meta name="color-scheme" content="dark light">
     <link rel="icon" href="data:,">
     <title>The Echo’s Design Kit · EchoKit</title>
-    <link rel="stylesheet" href="../css/echokit.css?v=20261010-card-interaction-contrast">
-    <link rel="stylesheet" href="./preview.css?v=20261010-setting-row-colors">
+    <link rel="stylesheet" href="../css/echokit.css?v=20261011-complete-blue">
+    <link rel="stylesheet" href="./preview.css?v=20261011-complete-blue">
   </head>
   <body class="echo-root">
     <div class="echo-kit-showcase" id="top">
@@ -97,7 +97,7 @@
             <div class="echo-kit-stage echo-kit-stage--modal" aria-label="模态控件展示区">
               <form class="echo-kit-modal-preview echo-modal" id="modal-demo-form" aria-labelledby="modal-demo-title">
                 <div class="echo-modal__header">
-                  <span class="echo-modal__mark" aria-hidden="true"><img data-echo-icon="wrench.and.screwdriver" alt=""></span>
+                  <span class="echo-modal__mark" aria-hidden="true"><img data-echo-icon="macwindow" alt=""></span>
                   <div>
                     <h3 class="echo-modal__title" id="modal-demo-title">编辑资料</h3>
                     <p class="echo-modal__copy">请填写以下信息，完成后即可继续。</p>
@@ -122,7 +122,7 @@
                     <span class="echo-button__icon-wrap"><img class="echo-button__icon" data-echo-icon="xmark" alt="" aria-hidden="true"></span>
                     <span class="echo-button__label">取消</span>
                   </button>
-                  <button class="echo-button echo-button--primary" id="modal-demo-submit" type="submit">
+                  <button class="echo-button echo-button--complete" id="modal-demo-submit" type="submit">
                     <span class="echo-button__icon-wrap"><img class="echo-button__icon" data-echo-icon="checkmark" alt="" aria-hidden="true"></span>
                     <span class="echo-button__label">完成</span>
                   </button>
@@ -166,13 +166,15 @@
       </main>
     </div>
 
-    <button class="echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
-      <img class="echo-kit-theme-fab-icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true">
+    <button class="echo-button echo-button--switch echo-button--icon echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
+      <span class="echo-button__icon-wrap"><img class="echo-button__icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true"></span>
+      <span class="echo-button__label">外观</span>
     </button>
-    <button class="echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到无背景" title="切换到无背景" aria-pressed="true">
-      <img class="echo-kit-theme-fab-icon" id="background-mode-glyph" data-echo-icon="photo.fill" alt="" aria-hidden="true">
+    <button class="echo-button echo-button--switch echo-button--icon echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到无背景" title="切换到无背景" aria-pressed="true">
+      <span class="echo-button__icon-wrap"><img class="echo-button__icon" id="background-mode-glyph" data-echo-icon="photo" alt="" aria-hidden="true"></span>
+      <span class="echo-button__label">背景</span>
     </button>
     <script type="module" src="./router.js?v=20261009-sidebar-link-cache"></script>
-    <script type="module" src="./preview.js?v=20261010-card-interaction-contrast"></script>
+    <script type="module" src="./preview.js?v=20261011-complete-blue"></script>
   </body>
 </html>

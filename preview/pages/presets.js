@@ -23,8 +23,8 @@ export function installPresets(kind) {
     if (kind === 'button') {
       const presets = {
         default: { color: 'gray', label: '取消', icon: 'xmark' },
-        complete: { color: 'blue', label: '完成', icon: 'checkmark' },
-        primary: { color: 'blue', label: '保存', icon: 'square.and.arrow.down' },
+        complete: { variant: 'complete', label: '完成', icon: 'checkmark' },
+        primary: { variant: 'primary', label: '保存', icon: 'square.and.arrow.down' },
         danger: { color: 'red', label: '删除', icon: 'trash' },
         switch: { color: 'gray', variant: 'switch', label: '切换外观', icon: 'sun.max', size: 'icon' },
       };
@@ -38,8 +38,7 @@ export function installPresets(kind) {
       options = getTabPresetOptions(value);
       component = createEchoTabs(options);
     } else if (kind === 'modal') {
-      options = { icon: value === 'danger' ? 'exclamationmark.triangle' : 'slider.horizontal.3', title: { edit: '编辑资料', confirm: '确认操作', danger: '删除确认' }[value], addition: value === 'danger' ? '此操作不可撤销。' : '确认后继续。', content: (body) => body.append(document.createElement('p')), actions: [{ label: '取消', close: false }, { label: value === 'danger' ? '删除' : '完成', color: value === 'danger' ? 'danger' : 'primary', close: false }] };
-      options.actions = options.actions.map(action => ({ ...action, variant: action.color || 'default' }));
+      options = { icon: value === 'danger' ? 'exclamationmark.triangle' : 'slider.horizontal.3', title: { edit: '编辑资料', confirm: '确认操作', danger: '删除确认' }[value], addition: value === 'danger' ? '此操作不可撤销。' : '确认后继续。', content: (body) => body.append(document.createElement('p')), actions: [{ label: '取消', close: false }, { label: value === 'danger' ? '删除' : '完成', variant: value === 'danger' ? 'danger' : 'complete', close: false }] };
       modal = createEchoModal(options);
       modal.dataset.echoKitRouteArtifact = 'true';
       mount.replaceChildren(modal);

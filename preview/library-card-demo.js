@@ -1,10 +1,10 @@
 import { createEchoLibraryCard } from '../components/library-card/index.js';
-import { createEchoMetric } from '../components/metric/metric.js?v=20261010-card-interaction-contrast';
+import { createEchoMetric } from '../components/metric/metric.js?v=20261010-neutral-card';
 // Illustrative preview values, not local-library statistics.
 export const libraryDemoOptions = {
   icon: 'photo', logo: new URL('../assets/background.JPG', import.meta.url).href, title: 'EchoGallery', addition: '/home/Pictures/EchoGallery', active: true, primary: true,
   onClick: (_, card) => card.echoLibraryCard.update({ active: !card.echoLibraryCard.getOptions().active }),
-  attachment: ['#2f80ff', '#68a7ff', '#9bc7ff', '#c7def8', '#dce9f6', '#f1f5fa'],
+  attachment: ['#636366', '#79797e', '#929297', '#aaaab0', '#c4c4ca', '#dedee3'],
   content: [
     () => createEchoMetric({ label: '创建日期', value: '2026-10-08', icon: 'calendar' }),
     () => createEchoMetric({ label: '上次扫描', value: '尚未扫描', icon: 'clock' }),

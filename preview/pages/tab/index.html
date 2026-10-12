@@ -7,9 +7,9 @@
     <meta name="color-scheme" content="dark light">
     <link rel="icon" href="data:,">
     <title>Tabs · The Echo’s Design Kit</title>
-    <link rel="stylesheet" href="../../../css/echokit.css?v=20261010-card-interaction-contrast">
-    <link rel="stylesheet" href="../../preview.css?v=20261010-panel-input">
-    <link rel="stylesheet" href="./page.css?v=20261010-shared-practice-fields">
+    <link rel="stylesheet" href="../../../css/echokit.css?v=20261011-complete-blue">
+    <link rel="stylesheet" href="../../preview.css?v=20261011-complete-blue">
+    <link rel="stylesheet" href="./page.css?v=20261010-detail-sidebar-full-nav">
   </head>
   <body class="echo-root">
     <div class="echo-kit-showcase echo-kit-detail" id="top">
@@ -49,6 +49,9 @@
               <span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="macwindow" alt="" aria-hidden="true"><span>模态窗口</span></span>
             </a>
             <a class="echo-kit-detail-nav-muted" href="../library-card/"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle" alt=""><span>资源库卡片</span></span></a>
+            <a class="echo-kit-detail-nav-muted" href="../../index.html#segmented-section"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="slider.horizontal.3" alt=""><span>分段选择器</span></span></a>
+            <a class="echo-kit-detail-nav-muted" href="../../index.html#input-section"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="rectangle.and.pencil.and.ellipsis" alt=""><span>输入框</span></span></a>
+            <a class="echo-kit-detail-nav-muted" href="../../index.html#setting-row-section"><span class="echo-kit-sidebar-link"><img class="echo-kit-sidebar-icon" data-echo-icon="gearshape.2" alt=""><span>设置行</span></span></a>
           </nav>
           <p class="echo-visually-hidden" id="tab-filter-status" aria-live="polite"></p>
         </aside>
@@ -107,14 +110,16 @@
       </main>
     </div>
 
-    <button class="echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
-      <img class="echo-kit-theme-fab-icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true">
+    <button class="echo-button echo-button--switch echo-button--icon echo-kit-theme-fab" id="theme-toggle" type="button" aria-label="切换外观" title="切换到浅色外观" aria-pressed="true">
+      <span class="echo-button__icon-wrap"><img class="echo-button__icon" id="theme-glyph" data-echo-icon="sun.max.fill" alt="" aria-hidden="true"></span>
+      <span class="echo-button__label">外观</span>
     </button>
-    <button class="echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到无背景" title="切换到无背景" aria-pressed="true">
-      <img class="echo-kit-theme-fab-icon" id="background-mode-glyph" data-echo-icon="photo.fill" alt="" aria-hidden="true">
+    <button class="echo-button echo-button--switch echo-button--icon echo-kit-theme-fab echo-kit-background-fab" id="background-mode-toggle" type="button" aria-label="切换到无背景" title="切换到无背景" aria-pressed="true">
+      <span class="echo-button__icon-wrap"><img class="echo-button__icon" id="background-mode-glyph" data-echo-icon="photo" alt="" aria-hidden="true"></span>
+      <span class="echo-button__label">背景</span>
     </button>
     <script type="module" src="../../router.js?v=20261009-sidebar-link-cache"></script>
-    <script type="module" src="../../preview.js?v=20261010-card-interaction-contrast"></script>
-    <script type="module" src="./page.js"></script>
+    <script type="module" src="../../preview.js?v=20261011-complete-blue"></script>
+    <script type="module" src="./page.js?v=20261011-complete-blue"></script>
   </body>
 </html>

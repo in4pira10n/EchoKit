@@ -57,17 +57,27 @@
   cursor: wait;
 }
 
-.echo-button--primary,
-.echo-button--complete {
+.echo-button--primary {
   background: color-mix(in srgb, var(--echo-color-action-primary) 74%, rgba(255, 255, 255, .18));
   border-color: color-mix(in srgb, var(--echo-color-action-primary) 48%, rgba(255, 255, 255, .42));
   color: #fff;
 }
 
-.echo-button--primary:hover:not(:disabled),
-.echo-button--complete:hover:not(:disabled) {
+.echo-button--primary:hover:not(:disabled) {
   background: color-mix(in srgb, var(--echo-color-action-primary-hover) 84%, rgba(255, 255, 255, .12));
   border-color: color-mix(in srgb, var(--echo-color-action-primary-hover) 52%, rgba(255, 255, 255, .42));
+  color: #fff;
+}
+
+.echo-button--complete {
+  background: color-mix(in srgb, var(--echo-color-action-complete) 74%, rgba(255, 255, 255, .18));
+  border-color: color-mix(in srgb, var(--echo-color-action-complete) 48%, rgba(255, 255, 255, .42));
+  color: #fff;
+}
+
+.echo-button--complete:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--echo-color-action-complete-hover) 84%, rgba(255, 255, 255, .12));
+  border-color: color-mix(in srgb, var(--echo-color-action-complete-hover) 52%, rgba(255, 255, 255, .42));
   color: #fff;
 }
 
@@ -170,9 +180,12 @@
     0 14px 32px rgba(0, 0, 0, .34);
 }
 
-[data-theme="dark"] .echo-button--primary,
-[data-theme="dark"] .echo-button--complete {
+[data-theme="dark"] .echo-button--primary {
   border-color: color-mix(in srgb, var(--echo-color-action-primary) 48%, rgba(255, 255, 255, .16));
+}
+
+[data-theme="dark"] .echo-button--complete {
+  border-color: color-mix(in srgb, var(--echo-color-action-complete) 48%, rgba(255, 255, 255, .16));
 }
 
 @media (prefers-reduced-motion: reduce) {

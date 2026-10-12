@@ -1,6 +1,6 @@
-import { createEchoButton, ECHO_SYSTEM_COLORS } from '../../../components/button/index.js?v=20261008-color-export';
+import { createEchoButton, ECHO_SYSTEM_COLORS } from '../../../components/button/index.js?v=20261011-complete-blue';
 import { installDetailNavInteractions } from '../detail-nav.js';
-import { installPresets } from '../presets.js';
+import { installPresets } from '../presets.js?v=20261011-complete-blue';
 installDetailNavInteractions();
 installPresets('button');
 

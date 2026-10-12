@@ -1,4 +1,4 @@
-import { installPresets } from '../presets.js';
+import { installPresets } from '../presets.js?v=20261011-complete-blue';
 import { createEchoTabs } from "../../../components/tab/index.js";
 import { installDetailNavInteractions } from "../detail-nav.js";
 import { getTabPreset, getTabPresetOptions, makeTabItems } from "../../tab-presets.js";

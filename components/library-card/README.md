@@ -14,7 +14,7 @@
 | name | string | empty | Legacy alias for `title` |
 | path | string | empty | Legacy alias for `addition` |
 | logo | string | empty | Image URL; empty or failed image shows the shared SF Symbol gallery icon |
-| accent | string | #2f80ff | Six-digit hex accent |
+| accent | string | #636366 | Six-digit hex accent; the default is neutral graphite |
 | active | boolean | true | Current-library treatment |
 | primary | boolean | false | Primary-library mark |
 | available | boolean | true | Availability badge and opacity |
@@ -38,7 +38,7 @@ const card = createEchoLibraryCard({
   icon: "photo",
   title: library.name,
   addition: library.path,
-  attachment: ["#2f80ff", "#68a7ff", "#9bc7ff", "#c7def8", "#dce9f6", "#f1f5fa"],
+  attachment: ["#636366", "#79797e", "#929297", "#aaaab0", "#c4c4ca", "#dedee3"],
   content: [createEchoMetric({ icon: "calendar", label: "创建日期", value: "2026-10-08" })],
   active: library.id === activeLibraryId,
   metrics: [{ label: '照片', value: String(library.photoCount) }],
@@ -47,12 +47,12 @@ const card = createEchoLibraryCard({
 container.append(card);
 ```
 
-Load `@echo/kit/css` once. The card uses a neutral surface with accent-tinted hover, selected, and pressed states in both appearances; the circular avatar has no border. Metrics keep full contrast with secondary-label captions and primary-label values. System fonts only; stacked layout below 900px. Preview values are illustrative, not local-library statistics.
+Load `@echo/kit/css` once. The card uses a neutral surface with neutral hover, selected, and pressed states in both appearances; the circular avatar has no border. Metrics keep full contrast with secondary-label captions and primary-label values. System fonts only; stacked layout below 900px. Preview values are illustrative, not local-library statistics.
 
 ## States And Composition
 
 `active` is controlled by the host, exposed as `aria-pressed` on interactive cards. Provide `onClick` for pointer and Enter/Space activation; unavailable cards expose `aria-disabled` and suppress activation. A demo may toggle active, but real library switching remains an application operation.
 
-Hover raises and tints an interactive card; the controlled `active` state uses a stronger accent tint, and pointer press adds a distinct tint with a slight scale feedback. Keyboard focus uses the accent as a focus indicator. Reduced Motion removes transitions. Metrics remain fully legible in both light and dark appearances; SF Symbol glyphs adapt to the dark appearance while custom image icons retain their original colors.
+Hover raises an interactive card; the controlled `active` state uses a stronger neutral surface, and pointer press adds a distinct neutral treatment with slight scale feedback. Keyboard focus uses a neutral focus indicator. Reduced Motion removes transitions. Metrics remain fully legible in both light and dark appearances; SF Symbol glyphs adapt to the dark appearance while custom image icons retain their original colors.
 
 Use factories (`() => createEchoMetric(...)`) to compose reusable card content, so each card owns separate DOM nodes. Attachment accepts HEX swatches or nodes; an empty array deliberately hides swatches. `getOptions()` copies content and attachment arrays. SF avatar symbols use a fixed width and natural height; image avatars retain circular cropping.

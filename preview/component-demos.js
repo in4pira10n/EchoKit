@@ -3,7 +3,7 @@ import { createEchoButton } from "../components/button/index.js";
 import { createEchoLibraryCard } from "../components/library-card/index.js";
 import { createEchoSegmented } from "../components/segmented/index.js";
 import { createEchoSettingRow } from "../components/setting-row/index.js";
-import { libraryDemoOptions } from "./library-card-demo.js?v=20261010-card-interaction-contrast";
+import { libraryDemoOptions } from "./library-card-demo.js?v=20261010-neutral-card";
 
 export function mountPrimitiveDemos(root = document) {
   const segmentedMount = root.querySelector("#segmented-demo");

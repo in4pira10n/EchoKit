@@ -23,8 +23,7 @@ function openModal(modal, trigger) {
   modal.setAttribute("aria-hidden", "false");
   if (modal.classList.contains('echo-modal-overlay--embedded')) return;
   const dialog = modal.querySelector('[role="dialog"]');
-  const firstControl = dialog?.querySelector(FOCUSABLE_SELECTOR);
-  (firstControl || dialog)?.focus({ preventScroll: true });
+  dialog?.focus({ preventScroll: true });
 }
 
 function closeModal(modal) {

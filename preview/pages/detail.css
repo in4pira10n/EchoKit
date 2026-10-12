@@ -360,39 +360,43 @@ html[data-theme="dark"] .echo-kit-breadcrumb-chevron {
 
   .echo-kit-detail-nav {
     display: flex;
-    gap: 18px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2px 18px;
     margin: 14px 0 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .echo-kit-detail-nav::-webkit-scrollbar {
-    display: none;
+    overflow: visible;
   }
 
   .echo-kit-detail-nav-group {
     display: flex;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
     gap: 0;
-    flex: 0 0 auto;
   }
 
   .echo-kit-detail-nav-group.is-open {
-    gap: 16px;
+    gap: 0;
+  }
+
+  .echo-kit-detail-nav-group-title {
+    min-height: 44px;
+    flex: 0 0 100%;
   }
 
   .echo-kit-detail-nav-items {
     display: flex;
-    gap: 18px;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    gap: 0 18px;
     padding-left: 0;
-    max-width: 0;
-    max-height: 48px;
-    transform: translateX(-7px);
+    max-width: none;
+    max-height: 0;
+    transform: translateY(-7px);
   }
 
   .echo-kit-detail-nav-group.is-open .echo-kit-detail-nav-items {
-    max-width: 720px;
-    max-height: 48px;
-    transform: translateX(0);
+    max-height: 96px;
+    transform: translateY(0);
   }
 
   .echo-kit-detail-nav-items a,

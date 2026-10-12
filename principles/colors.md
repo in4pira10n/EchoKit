@@ -45,7 +45,7 @@ These color names describe hue only; they do not encode business meanings such a
 | `mint` | `--echo-color-mint` | Fresh, secondary emphasis |
 | `teal` | `--echo-color-teal` | Secondary emphasis |
 | `cyan` | `--echo-color-cyan` | Informational emphasis |
-| `blue` | `--echo-color-blue` | EchoKit's default accent, links, and primary-control backgrounds |
+| `blue` | `--echo-color-blue` | iOS system blue; the default tint for the `primary` Button variant and informational emphasis |
 | `indigo` | `--echo-color-indigo` | Secondary emphasis |
 | `purple` | `--echo-color-purple` | Secondary emphasis |
 | `pink` | `--echo-color-pink` | Secondary emphasis |
@@ -54,7 +54,7 @@ These color names describe hue only; they do not encode business meanings such a
 ### Button Example
 
 ```js
-createEchoButton({ label: "Save", icon: "square.and.arrow.down", color: "blue" });
+createEchoButton({ label: "Save", icon: "square.and.arrow.down", variant: "primary" });
 createEchoButton({ label: "Cancel", icon: "xmark", color: "gray" });
 createEchoButton({ label: "Delete", icon: "trash", color: "red" });
 ```
@@ -135,7 +135,8 @@ The following names are still used by existing components; they are not values i
 | `--echo-color-accent` / `--echo-color-accent-hover` / `--echo-color-accent-soft` | Brand accent, hover, and subtle fill; host overrides are preserved |
 | `--echo-color-on-accent` | Foreground on a brand-accent surface; Buttons remain white by design and do not use this token directly |
 | `--echo-color-danger` / `--echo-color-danger-soft` | Legacy roles for error text and subtle error backgrounds; not valid Button `color` values |
-| `--echo-color-action-primary` / `--echo-color-action-primary-hover` | Legacy button-style aliases, currently mapped to blue |
+| `--echo-color-action-primary` / `--echo-color-action-primary-hover` | Primary Button treatment, mapped to iOS system blue in light and dark appearances |
+| `--echo-color-action-complete` / `--echo-color-action-complete-hover` | Complete Button treatment, mapped to iOS system blue in light and dark appearances |
 | `--echo-color-action-danger` | Legacy button-style alias, currently mapped to red |
 | `--echo-color-modal-surface` / `--echo-color-modal-text` | Secondary grouped background / label |
 | `--echo-color-modal-field-surface` / `--echo-color-modal-field-border` | Tertiary grouped background / separator |
@@ -176,8 +177,8 @@ Keep color names separate from component-state names:
 | Do not use as `color` | Use instead |
 | --- | --- |
 | `neutral` | `gray` |
-| `primary` | `blue` or a host-defined custom color |
-| `complete` | `blue` or `green`, with text and an icon communicating completion |
+| `primary` | Use `variant: "primary"`; it uses iOS system blue by default |
+| `complete` | Use `variant: "complete"`; it uses iOS system blue by default |
 | `danger` | `red`, with a clear action label and a trash icon |
 | `switch` | `gray`, with `variant: "switch"` set separately |
 

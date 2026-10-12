@@ -1,10 +1,10 @@
-import { upgradeEchoButton } from "../js/echokit.js";
+import { upgradeEchoButton } from "../js/echokit.js?v=20261011-complete-blue";
 import { upgradeEchoTabs } from "../components/tab/index.js";
 import { installEchoIcons, resolveEchoIcon } from "../components/icon.js";
-import { mountLibraryDemo } from './library-card-demo.js?v=20261010-card-interaction-contrast';
-import { mountModalDemo } from './modal-demo.js';
+import { mountLibraryDemo } from './library-card-demo.js?v=20261010-neutral-card';
+import { mountModalDemo } from './modal-demo.js?v=20261011-complete-blue';
 import { getTabPresetOptions } from "./tab-presets.js";
-import { mountPrimitiveDemos } from "./component-demos.js?v=20261010-card-interaction-contrast";
+import { mountPrimitiveDemos } from "./component-demos.js?v=20261011-complete-blue";
 
 const assetUrl = (name) => resolveEchoIcon(name);
 
@@ -16,11 +16,12 @@ mountPrimitiveDemos(root);
 const themeToggle = root.querySelector("#theme-toggle");
 const themeGlyph = root.querySelector("#theme-glyph");
 const backgroundModeToggle = root.querySelector("#background-mode-toggle");
-const backgroundModeGlyph = root.querySelector("#background-mode-glyph");
 const componentFilter = root.querySelector("#component-filter");
 const filterStatus = root.querySelector("#filter-status");
 const componentList = root.querySelector(".echo-kit-components");
 const contentScroller = root.querySelector(".echo-kit-content");
+const detailSidebar = root.querySelector(".echo-kit-detail-page .echo-kit-sidebar");
+const detailLayout = root.querySelector(".echo-kit-detail-page .echo-kit-layout");
 const buttonDemoElement = root.querySelector("#button-demo");
 const buttonDemo = buttonDemoElement ? upgradeEchoButton(buttonDemoElement) : null;
 const mainNavElement = root.querySelector("#main-nav");
@@ -38,11 +39,34 @@ function scrollToContentTarget(target, { behavior = "smooth", updateHash = true 
 
   const scrollerRect = contentScroller.getBoundingClientRect();
   const targetRect = target.getBoundingClientRect();
-  const mobileInset = window.matchMedia("(max-width: 760px)").matches ? 140 : 16;
+  const isMobile = window.matchMedia("(max-width: 760px)").matches;
+  const mobileInset = isMobile
+    ? detailSidebar ? parseFloat(getComputedStyle(contentScroller).paddingTop) || 140 : 140
+    : 16;
   const delta = targetRect.top - scrollerRect.top - mobileInset;
 
   contentScroller.scrollBy({ top: delta, behavior });
   if (updateHash && target.id) history.pushState(null, "", `#${target.id}`);
+}
+
+function syncDetailSidebarSpace() {
+  if (!detailSidebar || !detailLayout || !contentScroller) return;
+  if (!window.matchMedia("(max-width: 760px)").matches) {
+    contentScroller.style.removeProperty("padding-top");
+    return;
+  }
+
+  const sidebarBottom = detailSidebar.getBoundingClientRect().bottom;
+  const layoutTop = detailLayout.getBoundingClientRect().top;
+  contentScroller.style.paddingTop = `${Math.ceil(sidebarBottom - layoutTop + 12)}px`;
+}
+
+if (detailSidebar && detailLayout && contentScroller) {
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(() => requestAnimationFrame(syncDetailSidebarSpace)).observe(detailSidebar);
+  }
+  window.addEventListener("resize", syncDetailSidebarSpace);
+  requestAnimationFrame(syncDetailSidebarSpace);
 }
 
 const buttonDemoStates = [
@@ -75,7 +99,7 @@ function setButtonDemoState(index) {
   buttonDemoStateIndex = buttonDemoStates.indexOf(state);
   buttonDemo.echoButton.setState(state.key, {
     variant: state.variant,
-    color: state.key === 'danger' ? 'red' : state.key === 'complete' ? 'blue' : 'gray',
+    color: state.key === 'danger' ? 'red' : state.key === 'default' ? 'gray' : null,
     icon: state.icon,
     label: state.label,
     ariaLabel: `${state.label}，点击切换按钮状态`,
@@ -128,7 +152,6 @@ function setBackgroundMode(mode) {
   backgroundModeToggle?.setAttribute("aria-pressed", String(isOn));
   backgroundModeToggle?.setAttribute("aria-label", `切换到${isOn ? "无" : "有"}背景`);
   backgroundModeToggle?.setAttribute("title", `切换到${isOn ? "无" : "有"}背景`);
-  if (backgroundModeGlyph) backgroundModeGlyph.src = assetUrl(isOn ? "photo.fill" : "square.slash.fill");
 }
 
 setBackgroundMode(document.documentElement.dataset.stageBackground);
@@ -178,6 +201,7 @@ componentFilter?.addEventListener("input", () => {
 });
 
 const categoryLinks = [...document.querySelectorAll("[data-category-link]")];
+const detailLinks = [...document.querySelectorAll("[data-detail-link]")];
 
 function setActiveCategory(component) {
   categoryLinks.forEach((link) => {
@@ -201,6 +225,15 @@ categoryLinks.forEach((link) => {
   });
 });
 
+detailLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const target = root.getElementById(link.dataset.detailLink);
+    if (!target || !contentScroller) return;
+    event.preventDefault();
+    scrollToContentTarget(target);
+  });
+});
+
 if ("IntersectionObserver" in window) {
   const categoryObserver = new IntersectionObserver((entries) => {
     const activeSection = entries.find((entry) => entry.isIntersecting)?.target;
@@ -210,9 +243,9 @@ if ("IntersectionObserver" in window) {
   document.querySelectorAll(".echo-kit-component").forEach((section) => categoryObserver.observe(section));
 }
 
-if (componentList && location.hash) {
+if (contentScroller && location.hash) {
   requestAnimationFrame(() => {
-  const target = root.getElementById(location.hash.slice(1));
+    const target = root.getElementById(location.hash.slice(1));
     if (target) scrollToContentTarget(target, { behavior: "auto", updateHash: false });
   });
 }

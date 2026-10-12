@@ -1,6 +1,6 @@
 import { resolveEchoIcon } from "../icon.js";
 
-const defaults = { icon: null, title: '', addition: '', attachment: [100, 80, 60, 40, 20], content: [], name: '', path: '', logo: '', accent: '#2f80ff', active: true, primary: false, available: true, rebuildRequired: false, draggable: false, metrics: [], onClick: null, onDragStart: null, onDragEnd: null };
+const defaults = { icon: null, title: '', addition: '', attachment: [100, 80, 60, 40, 20], content: [], name: '', path: '', logo: '', accent: '#636366', active: true, primary: false, available: true, rebuildRequired: false, draggable: false, metrics: [], onClick: null, onDragStart: null, onDragEnd: null };
 const iconRatios = new Map();
 
 function setMaskIcon(element, iconName, height, fixedWidth = false) {
